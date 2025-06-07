@@ -66,7 +66,7 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ShieldIcon className="h-5 w-5" />
+            <Shield className="h-5 w-5" />
             House Rules
           </CardTitle>
           <p className="text-sm text-muted-foreground">
@@ -125,7 +125,7 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
                   !newRule.trim() || watchedRules.includes(newRule.trim())
                 }
               >
-                <PlusIcon className="h-4 w-4" />
+                <Plus className="h-4 w-4" />
               </Button>
             </div>
           </div>
