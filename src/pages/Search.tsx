@@ -253,7 +253,7 @@ const Search = () => {
                       size="sm"
                       className="rounded-l-none"
                     >
-                      <MapIcon className="h-4 w-4" />
+                      <Map className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
