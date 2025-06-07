@@ -45,6 +45,15 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
     );
   };
 
+  const toggleRule = (rule: string) => {
+    const isSelected = watchedRules.includes(rule);
+    if (isSelected) {
+      removeRule(rule);
+    } else {
+      addRule(rule);
+    }
+  };
+
   const addCustomRule = () => {
     if (newRule.trim() && !watchedRules.includes(newRule.trim())) {
       addRule(newRule.trim());
@@ -75,11 +84,8 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
                 return (
                   <div
                     key={rule}
-                    onClick={() =>
-                      isSelected ? removeRule(rule) : addRule(rule)
-                    }
                     className={`
-                      flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition-all
+                      flex items-center gap-3 p-3 border rounded-lg transition-all
                       ${
                         isSelected
                           ? "border-primary bg-primary/5 shadow-sm"
@@ -89,11 +95,12 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
                   >
                     <Checkbox
                       checked={isSelected}
-                      onCheckedChange={() =>
-                        isSelected ? removeRule(rule) : addRule(rule)
-                      }
+                      onCheckedChange={() => toggleRule(rule)}
                     />
-                    <Label className="cursor-pointer flex-1 text-sm">
+                    <Label
+                      className="cursor-pointer flex-1 text-sm"
+                      onClick={() => toggleRule(rule)}
+                    >
                       {rule}
                     </Label>
                   </div>

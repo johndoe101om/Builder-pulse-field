@@ -143,9 +143,8 @@ export const AmenitiesStep = ({
                   return (
                     <div
                       key={amenity}
-                      onClick={() => toggleAmenity(amenity)}
                       className={`
-                        flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition-all
+                        flex items-center gap-3 p-3 border rounded-lg transition-all
                         ${
                           isSelected
                             ? "border-primary bg-primary/5 shadow-sm"
@@ -160,7 +159,10 @@ export const AmenitiesStep = ({
                       <IconComponent
                         className={`h-4 w-4 ${isSelected ? "text-primary" : "text-gray-500"}`}
                       />
-                      <Label className="cursor-pointer flex-1 text-sm">
+                      <Label
+                        className="flex-1 text-sm cursor-pointer"
+                        onClick={() => toggleAmenity(amenity)}
+                      >
                         {amenity}
                       </Label>
                     </div>
