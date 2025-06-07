@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { DollarSignIcon, InfoIcon } from "lucide-react";
+import { DollarSign, InfoIcon } from "lucide-react";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
 import { ListingFormData } from "@/lib/types";
 
@@ -37,7 +37,7 @@ export const PricingStep = ({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <DollarSignIcon className="h-5 w-5" />
+            <DollarSign className="h-5 w-5" />
             Pricing
           </CardTitle>
         </CardHeader>

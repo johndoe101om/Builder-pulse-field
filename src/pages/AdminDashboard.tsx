@@ -19,7 +19,7 @@ import {
 import { BookingTable } from "@/components/admin/BookingTable";
 import {
   CalendarIcon,
-  DollarSignIcon,
+  DollarSign,
   UsersIcon,
   TrendingUpIcon,
   HomeIcon,
@@ -178,7 +178,7 @@ const AdminDashboard = () => {
                     </p>
                   </div>
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <DollarSignIcon className="h-6 w-6 text-green-600" />
+                    <DollarSign className="h-6 w-6 text-green-600" />
                   </div>
                 </div>
               </CardContent>
