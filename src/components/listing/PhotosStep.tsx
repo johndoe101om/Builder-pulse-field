@@ -3,7 +3,7 @@ import { Control, UseFormWatch } from "react-hook-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ImageIcon, XIcon, UploadIcon } from "lucide-react";
+import { Image, X, Upload } from "lucide-react";
 import { ListingFormData } from "@/lib/types";
 
 interface PhotosStepProps {
@@ -86,7 +86,7 @@ export const PhotosStep = ({ control, watch, setValue }: PhotosStepProps) => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ImageIcon className="h-5 w-5" />
+            <Image className="h-5 w-5" />
             Property Photos
           </CardTitle>
           <p className="text-sm text-muted-foreground">

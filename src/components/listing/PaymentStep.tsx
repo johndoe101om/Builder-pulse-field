@@ -7,7 +7,7 @@ import {
   CreditCardIcon,
   ShieldCheckIcon,
   CheckCircleIcon,
-  DollarSignIcon,
+  DollarSign,
   CalendarIcon,
   HomeIcon,
 } from "lucide-react";
@@ -72,7 +72,7 @@ export const PaymentStep = ({ control, watch, setValue }: PaymentStepProps) => {
             <Card className="border-2 border-blue-200 bg-blue-50">
               <CardHeader>
                 <CardTitle className="text-blue-900 flex items-center gap-2">
-                  <DollarSignIcon className="h-5 w-5" />
+                  <DollarSign className="h-5 w-5" />
                   Host Fees
                 </CardTitle>
               </CardHeader>
