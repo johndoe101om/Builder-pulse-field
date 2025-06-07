@@ -21,8 +21,8 @@ import {
   HomeIcon,
   MapPinIcon,
   StarIcon,
-  DollarSignIcon,
-  ImageIcon,
+  DollarSign,
+  Image,
   ShieldIcon,
   CreditCardIcon,
 } from "lucide-react";
@@ -107,7 +107,7 @@ const AddListing = () => {
       id: 3,
       title: "Pricing",
       description: "Set your rates and rules",
-      icon: DollarSignIcon,
+      icon: DollarSign,
       component: PricingStep,
       required: [
         "pricing.basePrice",
@@ -119,7 +119,7 @@ const AddListing = () => {
       id: 4,
       title: "Photos",
       description: "Add property images",
-      icon: ImageIcon,
+      icon: Image,
       component: PhotosStep,
       required: [],
     },
