@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  HomeIcon,
-  Facebook,
-  TwitterIcon,
-  InstagramIcon,
-  LinkedinIcon,
-} from "lucide-react";
+import { HomeIcon, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -23,9 +17,9 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <TwitterIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <InstagramIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <LinkedinIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
             </div>
           </div>
 
