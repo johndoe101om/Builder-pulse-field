@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
+import { WishlistProvider } from "./contexts/WishlistContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
@@ -13,6 +14,7 @@ import GuestDashboard from "./pages/GuestDashboard";
 import HostDashboard from "./pages/HostDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import AddListing from "./pages/AddListing";
+import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -24,74 +26,79 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/property/:id" element={<PropertyDetail />} />
-            <Route
-              path="/booking/:id"
-              element={
-                <ProtectedRoute>
-                  <BookingPayment />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/guest-dashboard"
-              element={
-                <ProtectedRoute>
-                  <GuestDashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/host-dashboard"
-              element={
-                <ProtectedRoute>
-                  <HostDashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin-dashboard"
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/add-listing"
-              element={
-                <ProtectedRoute>
-                  <AddListing />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            {/* Super Admin Route - Separate and Hidden */}
-            <Route path="/sa-login" element={<SuperAdminLogin />} />
-            <Route path="/super-admin-dashboard" element={<AdminDashboard />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <WishlistProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/property/:id" element={<PropertyDetail />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route
+                path="/booking/:id"
+                element={
+                  <ProtectedRoute>
+                    <BookingPayment />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/guest-dashboard"
+                element={
+                  <ProtectedRoute>
+                    <GuestDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/host-dashboard"
+                element={
+                  <ProtectedRoute>
+                    <HostDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin-dashboard"
+                element={
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/add-listing"
+                element={
+                  <ProtectedRoute>
+                    <AddListing />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              {/* Super Admin Route - Separate and Hidden */}
+              <Route path="/sa-login" element={<SuperAdminLogin />} />
+              <Route
+                path="/super-admin-dashboard"
+                element={<AdminDashboard />}
+              />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </WishlistProvider>
     </AuthProvider>
   </QueryClientProvider>
 );
-
 export default App;

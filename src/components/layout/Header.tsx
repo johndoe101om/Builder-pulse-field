@@ -26,10 +26,11 @@ interface HeaderProps {
 }
 
 export const Header = ({ onSearch }: HeaderProps) => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const { wishlistCount } = useWishlist();
 
   const isHomePage = location.pathname === "/";
 
@@ -80,26 +81,48 @@ export const Header = ({ onSearch }: HeaderProps) => {
 
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
+          {/* Wishlist Button - only show for non-super-admin users */}
+          {(!user || user.role !== 'superadmin') && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="relative"
+              onClick={() => {
+                if (user) {
+                  navigate('/wishlist');
+                } else {
+                  navigate('/login', { state: { from: { pathname: '/wishlist' } } });
+                }
+              }}
+            >
+              <HeartIcon className="h-4 w-4" />
+              {user && wishlistCount > 0 && (
+                <Badge
+                  variant="destructive"
+                  className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs"
+                >
+                  {wishlistCount > 99 ? '99+' : wishlistCount}
+                </Badge>
+              )}
+            </Button>
+          )}
+
           {/* Host Link - only show for non-super-admin users */}
-          {(!user || user.role !== "superadmin") && (
+          {(!user || user.role !== 'superadmin') && (
             <Button
               variant="ghost"
               className="text-sm font-medium"
               onClick={() => {
                 if (user) {
-                  navigate("/add-listing");
+                  navigate('/add-listing');
                 } else {
-                  navigate("/signup", {
-                    state: {
-                      from: { pathname: "/add-listing" },
-                      hostingIntent: true,
-                    },
-                  });
+                  navigate('/signup', { state: { from: { pathname: '/add-listing' }, hostingIntent: true } });
                 }
               }}
             >
               Become a host
             </Button>
+          )}
           )}
 
           {/* User Menu */}
@@ -147,6 +170,17 @@ export const Header = ({ onSearch }: HeaderProps) => {
                       <Link to="/profile" className="flex items-center">
                         <UserIcon className="mr-2 h-4 w-4" />
                         Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/wishlist" className="flex items-center">
+                        <HeartIcon className="mr-2 h-4 w-4" />
+                        Wishlist
+                        {wishlistCount > 0 && (
+                          <Badge variant="secondary" className="ml-auto">
+                            {wishlistCount}
+                          </Badge>
+                        )}
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>

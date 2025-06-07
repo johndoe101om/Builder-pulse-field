@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,9 @@ import { StarIcon, HeartIcon, MapPinIcon } from "lucide-react";
 import { Property } from "@/lib/types";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useWishlist } from "@/contexts/WishlistContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 
 interface PropertyCardProps {
   property: Property;
@@ -44,9 +47,17 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
           <Button
             size="sm"
             variant="ghost"
-            className="absolute top-3 right-3 h-8 w-8 p-0 bg-white/80 hover:bg-white/90 rounded-full"
+            className="absolute top-3 right-3 h-8 w-8 p-0 bg-white/80 hover:bg-white/90 rounded-full transition-all duration-200 hover:scale-110"
+            onClick={handleWishlistClick}
           >
-            <HeartIcon className="h-4 w-4" />
+            <HeartIcon
+              className={cn(
+                "h-4 w-4 transition-all duration-200",
+                isWishlisted
+                  ? "text-red-500 fill-red-500"
+                  : "text-gray-600 hover:text-red-500",
+              )}
+            />
           </Button>
 
           {/* Instant Book Badge */}
