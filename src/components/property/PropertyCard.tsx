@@ -77,7 +77,7 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
         </div>
 
         {/* Title */}
-        <Link to={`/property/${id}`}>
+        <Link to={`/booking/${id}`}>
           <h3 className="font-semibold text-gray-900 line-clamp-2 hover:text-primary transition-colors mb-2">
             {title}
           </h3>
