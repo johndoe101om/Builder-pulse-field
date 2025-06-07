@@ -553,7 +553,7 @@ const Home = () => {
                 <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
-                      <ShieldIcon className="h-12 w-12 text-green-600" />
+                      <Shield className="h-12 w-12 text-green-600" />
                       <div className="ml-4">
                         <h3 className="font-bold">Host Protection</h3>
                         <p className="text-white/80 text-sm">
@@ -569,7 +569,7 @@ const Home = () => {
                 <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
-                      <TrendingUpIcon className="h-12 w-12 text-blue-600" />
+                      <TrendingUp className="h-12 w-12 text-blue-600" />
                       <div className="ml-4">
                         <h3 className="font-bold">Smart Pricing</h3>
                         <p className="text-white/80 text-sm">
@@ -583,7 +583,7 @@ const Home = () => {
                 <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
                   <CardContent className="p-0">
                     <div className="flex items-center mb-4">
-                      <UsersIcon className="h-12 w-12 text-purple-600" />
+                      <Users className="h-12 w-12 text-purple-600" />
                       <div className="ml-4">
                         <h3 className="font-bold">Guest Screening</h3>
                         <p className="text-white/80 text-sm">
