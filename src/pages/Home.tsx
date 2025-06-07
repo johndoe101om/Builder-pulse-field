@@ -19,6 +19,7 @@ import {
   PlayCircleIcon,
   ChevronDownIcon,
   Compass,
+  Plane,
   Mountain,
   Camera,
   Navigation,
@@ -28,6 +29,7 @@ import {
   Train,
   Bus,
   Car,
+  ShieldIcon,
 } from "lucide-react";
 import { mockProperties } from "@/lib/mockData";
 
@@ -111,7 +113,7 @@ const Home = () => {
     {
       number: "1M+",
       label: "Wanderers",
-      icon: PlaneIcon,
+      icon: Plane,
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -123,7 +125,7 @@ const Home = () => {
       desc: "Instagram-worthy spots at every destination",
     },
     {
-      icon: CompassIcon,
+      icon: Compass,
       title: "Discover Hidden Gems",
       desc: "Secret places locals love to share",
     },
@@ -225,7 +227,7 @@ const Home = () => {
                 <span className="inline-flex items-center gap-3 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 text-sm font-medium">
                   <Compass className="h-5 w-5 animate-spin" />
                   Your Adventure Starts Here
-                  <PlaneIcon className="h-4 w-4" />
+                  <Plane className="h-4 w-4" />
                 </span>
               </div>
 
@@ -343,534 +345,298 @@ const Home = () => {
             >
               <div className="bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-8 shadow-2xl">
                 <div className="text-center mb-6">
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <GlobeIcon className="h-6 w-6 text-yellow-300 animate-spin" />
-                    <h3 className="text-2xl font-bold text-white">
-                      Where To Next?
-                    </h3>
-                    <PlaneIcon className="h-6 w-6 text-yellow-300" />
-                  </div>
+                  <h2 className="text-2xl font-bold mb-2">
+                    Find Your Perfect Stay
+                  </h2>
                   <p className="text-white/80">
-                    ✈️ The world is waiting for you!
+                    Where will your next adventure take you?
                   </p>
                 </div>
 
-                {/* Enhanced Search Form */}
-                <div className="space-y-6">
-                  <div className="bg-white/95 rounded-2xl p-4 shadow-xl">
-                    <SearchBar variant="compact" />
-                  </div>
+                <SearchBar />
 
-                  {/* Dream Destinations */}
-                  <div>
-                    <p className="text-sm text-white/90 mb-3 font-medium flex items-center gap-2">
-                      <MapPinIcon className="h-4 w-4" />
-                      Dream Destinations
-                    </p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {[
-                        "🏝️ Bali Paradise",
-                        "🗼 Paris Romance",
-                        "🏔️ Swiss Alps",
-                        "🌴 Miami Beaches",
-                      ].map((dest) => (
-                        <Button
-                          key={dest}
-                          variant="outline"
-                          size="sm"
-                          className="border-white/50 text-white hover:bg-white/25 hover:border-white/70 backdrop-blur-sm bg-white/15 justify-start text-xs"
-                          asChild
-                        >
-                          <Link to={`/search?location=${dest.split(" ")[1]}`}>
-                            {dest}
-                          </Link>
-                        </Button>
-                      ))}
-                    </div>
+                <div className="mt-6 text-center">
+                  <p className="text-white/70 text-sm mb-4">
+                    Popular destinations this week
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {["Goa", "Manali", "Udaipur", "Rishikesh"].map((dest) => (
+                      <Button
+                        key={dest}
+                        variant="outline"
+                        size="sm"
+                        className="border-white/40 text-white hover:bg-white/20 text-xs"
+                        asChild
+                      >
+                        <Link to={`/search?location=${dest.split(" ")[1]}`}>
+                          {dest}
+                        </Link>
+                      </Button>
+                    ))}
                   </div>
-
-                  {/* Adventure CTA */}
-                  <Button
-                    className="w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold border-0 shadow-lg transform hover:scale-105 transition-all"
-                    asChild
-                  >
-                    <Link to="/search">
-                      <Compass className="mr-2 h-5 w-5" />
-                      Discover Adventures
-                      <SparklesIcon className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Adventure Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <ChevronDownIcon className="h-6 w-6 text-white/80" />
-            <span className="text-xs text-white/60">Explore More</span>
-          </div>
-        </div>
       </section>
 
       {/* Wanderlust Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-amber-50 to-orange-50 relative overflow-hidden">
-        {/* Travel-themed background */}
-        <div className="absolute inset-0">
-          <PlaneIcon className="absolute top-10 right-20 h-32 w-32 text-orange-100 rotate-45" />
-          <CompassIcon className="absolute bottom-10 left-20 h-24 w-24 text-amber-100" />
-        </div>
-
-        <div className="container relative z-10">
+      <section className="py-16 bg-white">
+        <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4 flex items-center justify-center gap-3">
-              <GlobeIcon className="h-10 w-10 text-blue-600" />
-              Join the Global Adventure
-              <PlaneIcon className="h-10 w-10 text-orange-600" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Fueling Global Wanderlust
             </h2>
-            <p className="text-xl text-gray-600">
-              Travelers from every corner of the world choose us
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Join millions of travelers discovering extraordinary places and
+              creating unforgettable memories around the world.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {wanderlustStats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card
-                  key={index}
-                  className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 transform cursor-pointer group"
-                >
-                  <CardContent className="p-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {wanderlustStats.map((stat, index) => (
+              <div
+                key={index}
+                className={`transform transition-all duration-700 hover:scale-105 group ${
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-8">
                     <div
                       className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center group-hover:animate-pulse`}
                     >
-                      <IconComponent className="h-8 w-8 text-white" />
+                      <stat.icon className="h-8 w-8 text-white" />
                     </div>
                     <div className="text-4xl font-black text-gray-900 mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-600 font-bold">
+                    <div className="text-gray-600 font-medium">
                       {stat.label}
                     </div>
                   </CardContent>
                 </Card>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Travel Properties */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-gray-900 mb-6">
-              <span className="flex items-center justify-center gap-3 mb-4">
-                <CameraIcon className="h-12 w-12 text-pink-600" />
-                <span>Wanderlust</span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                  Collection
-                </span>
-                <StarIcon className="h-12 w-12 text-yellow-500 fill-current" />
-              </span>
+      {/* Featured Properties */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Handpicked for You
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              📸 Picture-perfect stays that will make your friends jealous and
-              your memories unforgettable
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Discover our most loved properties, carefully selected for their
+              unique charm and exceptional guest experiences.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProperties.map((property, index) => (
-              <div
-                key={property.id}
-                className={`transform transition-all duration-700 hover:scale-105 group ${
-                  index % 2 === 0 ? "md:translate-y-8" : "md:-translate-y-8"
-                }`}
-              >
-                <div className="relative">
-                  <PropertyCard
-                    property={property}
-                    className="border-0 shadow-xl hover:shadow-2xl"
-                  />
-                  {/* Travel Badge */}
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-full p-3 shadow-lg group-hover:animate-bounce">
-                    <PlaneIcon className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {featuredProperties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold shadow-xl transform hover:scale-105 transition-all"
-              asChild
-            >
+          <div className="text-center">
+            <Button size="lg" variant="outline" asChild>
               <Link to="/search">
-                <GlobeIcon className="mr-2 h-5 w-5" />
-                Explore All Destinations
-                <CompassIcon className="ml-2 h-5 w-5" />
+                View All Properties
+                <ArrowRightIcon className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Travel Experience Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        {/* Travel Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 animate-float">
-            <TreesIcon className="h-16 w-16 text-green-300/30" />
-          </div>
-          <div className="absolute bottom-20 right-20 animate-float delay-1000">
-            <WavesIcon className="h-20 w-20 text-blue-300/30" />
-          </div>
-          <div className="absolute top-1/2 left-1/3 animate-float delay-2000">
-            <MountainIcon className="h-12 w-12 text-white/20" />
-          </div>
-        </div>
+      {/* Become a Host Section */}
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600 text-white">
+        <Compass className="absolute bottom-10 left-20 h-24 w-24 text-amber-100" />
+        <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="mb-8">
+              <span className="inline-flex items-center gap-3 bg-amber-100 text-amber-800 border border-amber-200 rounded-full px-6 py-3 text-sm font-medium">
+                <SparklesIcon className="h-5 w-5" />
+                Share Your Space, Earn Great Income
+              </span>
+            </div>
 
-        <div className="container relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black mb-6 flex items-center justify-center gap-3">
-              <CompassIcon className="h-12 w-12 text-yellow-300" />
-              More Than Just Travel
-              <CameraIcon className="h-12 w-12 text-pink-300" />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Become a{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+                Host
+              </span>
             </h2>
-            <p className="text-2xl text-white/90 max-w-3xl mx-auto">
-              🎒 Create stories worth telling, collect moments not things
+
+            <p className="text-xl text-amber-100 mb-8 leading-relaxed">
+              ✨ Turn your extra space into extra income. Join thousands of
+              hosts earning up to{" "}
+              <span className="font-bold text-yellow-300">₹50,000</span> per
+              month by sharing their properties with travelers.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button
+                size="lg"
+                className="bg-white text-amber-600 hover:bg-amber-50 font-bold shadow-xl"
+                onClick={handleHostingClick}
+              >
+                <HomeIcon className="mr-2 h-5 w-5" />
+                Start Hosting Today
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10"
+              >
+                <PlayCircleIcon className="mr-2 h-5 w-5" />
+                Watch Host Stories
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "₹2,24,000",
+                  subtitle: "Average monthly earnings",
+                  icon: "💰",
+                },
+                {
+                  title: "⭐ 4.8+",
+                  subtitle: "Average host rating",
+                  icon: "⭐",
+                },
+                {
+                  title: "24/7",
+                  subtitle: "Support & protection",
+                  icon: "🛡️",
+                },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4"
+                >
+                  <div className="text-2xl mb-2">{stat.icon}</div>
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {stat.title}
+                  </div>
+                  <div className="text-amber-100 text-sm">{stat.subtitle}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {travelExperiences.map((experience, index) => {
-              const IconComponent = experience.icon;
-              return (
-                <div key={index} className="text-center group cursor-pointer">
-                  <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-3xl p-8 hover:bg-white/30 transition-all duration-300 transform hover:scale-105">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center group-hover:animate-bounce">
-                      <IconComponent className="h-8 w-8 text-white" />
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      <Camera className="h-12 w-12 text-pink-600" />
+                      <div className="ml-4">
+                        <h3 className="font-bold">Professional Photos</h3>
+                        <p className="text-white/80 text-sm">
+                          Free photography service
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-3">
-                      {experience.title}
-                    </h3>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {experience.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      <ShieldIcon className="h-12 w-12 text-green-600" />
+                      <div className="ml-4">
+                        <h3 className="font-bold">Host Protection</h3>
+                        <p className="text-white/80 text-sm">
+                          ₹10L+ coverage included
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="space-y-6 mt-8">
+                <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      <TrendingUpIcon className="h-12 w-12 text-blue-600" />
+                      <div className="ml-4">
+                        <h3 className="font-bold">Smart Pricing</h3>
+                        <p className="text-white/80 text-sm">
+                          AI-powered optimization
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      <UsersIcon className="h-12 w-12 text-purple-600" />
+                      <div className="ml-4">
+                        <h3 className="font-bold">Guest Screening</h3>
+                        <p className="text-white/80 text-sm">
+                          Verified guest profiles
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Host Wanderlust CTA */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-64 h-64 border-2 border-yellow-400/30 rounded-full"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 border-2 border-cyan-400/30 rotate-45"></div>
-          <PlaneIcon className="absolute top-32 right-40 h-16 w-16 text-white/10 rotate-45" />
-          <CompassIcon className="absolute bottom-40 left-40 h-12 w-12 text-white/10" />
+      {/* Travel Experiences Section */}
+      <section className="py-16 relative overflow-hidden bg-gradient-to-br from-emerald-600 to-teal-600 text-white">
+        <Mountain className="absolute bottom-40 left-40 h-20 w-20 text-white/10" />
+        <div className="absolute top-20 right-20 flex space-x-6">
+          <Compass className="h-20 w-20 text-yellow-300/30" />
+          <Waves className="h-20 w-20 text-blue-300/30" />
+          <Camera className="h-20 w-20 text-pink-300/30" />
         </div>
 
-        <div className="container relative z-10 text-center">
-          <h2 className="text-6xl font-black mb-8">
-            <span className="flex items-center justify-center gap-4 mb-4">
-          <Compass className="absolute bottom-10 left-20 h-24 w-24 text-amber-100" />
-          <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-8">
-                <span className="inline-flex items-center gap-3 bg-amber-100 text-amber-800 border border-amber-200 rounded-full px-6 py-3 text-sm font-medium">
-                  <SparklesIcon className="h-5 w-5" />
-                  Share Your Space, Earn Great Income
-                </span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Become a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
-                  Host
-                </span>
-              </h2>
-
-              <p className="text-xl text-amber-100 mb-8 leading-relaxed">
-                ✨ Turn your extra space into extra income. Join thousands of
-                hosts earning up to{" "}
-                <span className="font-bold text-yellow-300">₹50,000</span> per
-                month by sharing their properties with travelers.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button
-                  size="lg"
-                  className="bg-white text-amber-600 hover:bg-amber-50 font-bold shadow-xl"
-                  onClick={handleHostingClick}
-                >
-                  <HomeIcon className="mr-2 h-5 w-5" />
-                  Start Hosting Today
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10"
-                >
-                  <PlayCircleIcon className="mr-2 h-5 w-5" />
-                  Watch Host Stories
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "₹2,24,000",
-                    subtitle: "Average monthly earnings",
-                    icon: "💰",
-                  },
-                  {
-                    title: "⭐ 4.8+",
-                    subtitle: "Average host rating",
-                    icon: "⭐",
-                  },
-                  {
-                    title: "24/7",
-                    subtitle: "Support & protection",
-                    icon: "🛡️",
-                  },
-                ].map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4"
-                  >
-                    <div className="text-2xl mb-2">{stat.icon}</div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {stat.title}
-                    </div>
-                    <div className="text-amber-100 text-sm">{stat.subtitle}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-                    <CardContent className="p-0">
-                      <div className="flex items-center mb-4">
-                        <Camera className="h-12 w-12 text-pink-600" />
-                        <div className="ml-4">
-                          <h3 className="font-bold">Professional Photos</h3>
-                          <p className="text-white/80 text-sm">
-                            Free photography service
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-                    <CardContent className="p-0">
-                      <div className="flex items-center mb-4">
-                        <ShieldIcon className="h-12 w-12 text-green-600" />
-                        <div className="ml-4">
-                          <h3 className="font-bold">Host Protection</h3>
-                          <p className="text-white/80 text-sm">
-                            ₹10L+ coverage included
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className="space-y-6 mt-8">
-                  <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-                    <CardContent className="p-0">
-                      <div className="flex items-center mb-4">
-                        <TrendingUpIcon className="h-12 w-12 text-blue-600" />
-                        <div className="ml-4">
-                          <h3 className="font-bold">Smart Pricing</h3>
-                          <p className="text-white/80 text-sm">
-                            AI-powered optimization
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-                    <CardContent className="p-0">
-                      <div className="flex items-center mb-4">
-                        <UsersIcon className="h-12 w-12 text-purple-600" />
-                        <div className="ml-4">
-                          <h3 className="font-bold">Guest Screening</h3>
-                          <p className="text-white/80 text-sm">
-                            Verified guest profiles
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Adventure Section */}
-        <section className="py-16 relative overflow-hidden bg-gradient-to-br from-emerald-600 to-teal-600 text-white">
-          <Mountain className="absolute bottom-40 left-40 h-12 w-12 text-white/10" />
-          <div className="absolute top-20 right-20 flex space-x-6">
-            <Compass className="h-12 w-12 text-yellow-300" />
-            <Waves className="h-12 w-12 text-blue-300" />
-            <Camera className="h-12 w-12 text-pink-300" />
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">More Than Just a Stay</h2>
+            <p className="text-emerald-100 text-lg max-w-2xl mx-auto">
+              We connect you with experiences that transform ordinary trips into
+              extraordinary adventures.
+            </p>
           </div>
 
-          <div className="container relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">
-                Discover Your Next Adventure
-              </h2>
-              <p className="text-emerald-100 text-lg max-w-2xl mx-auto">
-                From serene mountain retreats to vibrant city experiences, find
-                unique stays that match your travel style.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  category: "Mountain Escapes",
-                  count: "2,500+ properties",
-                  image:
-                    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
-                  badge: "Popular",
-                },
-                {
-                  category: "Beach Retreats",
-                  count: "1,800+ properties",
-                  image:
-                    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=200&fit=crop",
-                  badge: "Trending",
-                },
-                {
-                  category: "City Adventures",
-                  count: "3,200+ properties",
-                  image:
-                    "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=200&fit=crop",
-                  badge: "Featured",
-                },
-                {
-                  category: "Heritage Stays",
-                  count: "950+ properties",
-                  image:
-                    "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=300&h=200&fit=crop",
-                  badge: "Unique",
-                },
-              ].map((category, index) => (
-                <Card
-                  key={index}
-                  className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/10 backdrop-blur-sm border-white/20"
-                >
-                  <div className="relative">
-                    <img
-                      src={category.image}
-                      alt={category.category}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <Badge
-                      className={`absolute top-3 left-3 ${
-                        index === 0
-                          ? "bg-orange-500"
-                          : index === 1
-                            ? "bg-green-500"
-                            : index === 2
-                              ? "bg-blue-500"
-                              : "bg-purple-500"
-                      } text-white`}
-                    >
-                      {category.badge}
-                    </Badge>
-                  </div>
-                  <CardContent className="p-6 text-white">
-                    <h3 className="font-semibold text-lg mb-2">
-                      {category.category}
-                    </h3>
-                    <p className="text-emerald-100 text-sm mb-4">
-                      {category.count}
-                    </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-white/50 text-white hover:bg-white/20 hover:border-white/70"
-                    >
-                      Explore
-                      <Compass className="ml-2 h-5 w-5" />
-            </Button>
-            <span className="text-gray-400 text-lg">or</span>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/40 text-white hover:bg-white/10 text-lg px-8 py-4"
-            >
-              <PlayCircleIcon className="mr-2 h-6 w-6" />
-              Watch Host Stories
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "₹2,24,000",
-                subtitle: "Average monthly earnings",
-                icon: "💰",
-              },
-              {
-                title: "2 mins",
-                subtitle: "To start your hosting journey",
-                icon: "⚡",
-              },
-              { title: "24/7", subtitle: "Adventure support team", icon: "🛡️" },
-            ].map((stat, index) => (
-              <div
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {travelExperiences.map((experience, index) => (
+              <Card
                 key={index}
-                className="text-center p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10"
+                className="text-center bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all"
               >
-                <div className="text-4xl mb-3">{stat.icon}</div>
-                <div className="text-4xl font-black text-yellow-400 mb-2">
-                  {stat.title}
-                </div>
-                <div className="text-gray-300">{stat.subtitle}</div>
-              </div>
+                <CardContent className="p-8">
+                  <experience.icon className="h-12 w-12 mx-auto mb-4 text-emerald-200" />
+                  <h3 className="font-semibold text-lg mb-3">
+                    {experience.title}
+                  </h3>
+                  <p className="text-emerald-100 text-sm">{experience.desc}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 };
