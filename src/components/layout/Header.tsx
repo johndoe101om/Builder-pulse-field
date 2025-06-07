@@ -12,13 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  SearchIcon,
-  MenuIcon,
-  HomeIcon,
-  UserIcon,
-  LogOutIcon,
-  SettingsIcon,
-  HeartIcon,
+  Search,
+  Menu,
+  Home as HomeIcon,
+  User,
+  LogOut,
+  Settings,
+  Heart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/AuthContext";
