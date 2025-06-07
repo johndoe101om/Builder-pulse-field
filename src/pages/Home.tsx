@@ -19,7 +19,7 @@ import {
   PlayCircleIcon,
   ChevronDownIcon,
   CompassIcon,
-  PlaneIcon,
+  Plane,
   MountainIcon,
   CameraIcon,
   NavigationIcon,
@@ -150,7 +150,7 @@ const Home = () => {
         <div className="absolute inset-0">
           {/* Floating Travel Icons */}
           <div className="absolute top-20 left-20 animate-bounce delay-1000">
-            <PlaneIcon className="h-8 w-8 text-white/30 rotate-45" />
+            <Plane className="h-8 w-8 text-white/30 rotate-45" />
           </div>
           <div className="absolute top-40 right-32 animate-pulse delay-2000">
             <CompassIcon className="h-6 w-6 text-white/40" />
@@ -197,7 +197,7 @@ const Home = () => {
           {/* Additional moving vehicles for more activity */}
           <div className="absolute top-80 left-80">
             <div className="animate-[moveRight_35s_linear_infinite] delay-1000">
-              <PlaneIcon className="h-6 w-6 text-white/25 rotate-45" />
+              <Plane className="h-6 w-6 text-white/25 rotate-45" />
             </div>
           </div>
           <div className="absolute bottom-80 right-60">
