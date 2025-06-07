@@ -86,7 +86,7 @@ const AddListing = () => {
       id: 1,
       title: "Location",
       description: "Where is your property?",
-      icon: MapPinIcon,
+      icon: MapPin,
       component: LocationStep,
       required: [
         "location.address",
@@ -99,7 +99,7 @@ const AddListing = () => {
       id: 2,
       title: "Amenities",
       description: "What does your property offer?",
-      icon: StarIcon,
+      icon: Star,
       component: AmenitiesStep,
       required: [],
     },
