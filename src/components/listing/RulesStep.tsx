@@ -89,8 +89,9 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
                   >
                     <Checkbox
                       checked={isSelected}
-                      onChange={() => {}}
-                      className="pointer-events-none"
+                      onCheckedChange={() =>
+                        isSelected ? removeRule(rule) : addRule(rule)
+                      }
                     />
                     <Label className="cursor-pointer flex-1 text-sm">
                       {rule}

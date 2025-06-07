@@ -155,8 +155,7 @@ export const AmenitiesStep = ({
                     >
                       <Checkbox
                         checked={isSelected}
-                        onChange={() => toggleAmenity(amenity)}
-                        className="pointer-events-none"
+                        onCheckedChange={() => toggleAmenity(amenity)}
                       />
                       <IconComponent
                         className={`h-4 w-4 ${isSelected ? "text-primary" : "text-gray-500"}`}
