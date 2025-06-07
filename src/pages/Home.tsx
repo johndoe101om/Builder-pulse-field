@@ -26,9 +26,9 @@ import {
   SunIcon,
   WavesIcon,
   TreesIcon,
-  TrainIcon,
-  BusIcon,
-  CarIcon,
+  Train,
+  Bus,
+  Car,
 } from "lucide-react";
 import { mockProperties } from "@/lib/mockData";
 
@@ -165,32 +165,32 @@ const Home = () => {
           {/* Moving Transportation Vehicles */}
           <div className="absolute top-32 left-10">
             <div className="animate-[moveRight_20s_linear_infinite]">
-              <TrainIcon className="h-9 w-9 text-white/35" />
+              <Train className="h-9 w-9 text-white/35" />
             </div>
           </div>
           <div className="absolute bottom-40 right-20">
             <div className="animate-[moveLeft_25s_linear_infinite]">
-              <BusIcon className="h-7 w-7 text-white/30" />
+              <Bus className="h-7 w-7 text-white/30" />
             </div>
           </div>
           <div className="absolute top-72 left-60">
             <div className="animate-[moveRightSlow_30s_linear_infinite]">
-              <CarIcon className="h-6 w-6 text-white/40" />
+              <Car className="h-6 w-6 text-white/40" />
             </div>
           </div>
           <div className="absolute bottom-60 left-20">
             <div className="animate-[moveRightFast_15s_linear_infinite]">
-              <TrainIcon className="h-8 w-8 text-white/25" />
+              <Train className="h-8 w-8 text-white/25" />
             </div>
           </div>
           <div className="absolute top-36 right-80">
             <div className="animate-[moveLeft_22s_linear_infinite]">
-              <BusIcon className="h-8 w-8 text-white/35" />
+              <Bus className="h-8 w-8 text-white/35" />
             </div>
           </div>
           <div className="absolute bottom-20 right-40">
             <div className="animate-[moveLeftFast_18s_linear_infinite]">
-              <CarIcon className="h-7 w-7 text-white/30" />
+              <Car className="h-7 w-7 text-white/30" />
             </div>
           </div>
 
@@ -202,7 +202,7 @@ const Home = () => {
           </div>
           <div className="absolute bottom-80 right-60">
             <div className="animate-[moveLeft_28s_linear_infinite] delay-2000">
-              <CarIcon className="h-5 w-5 text-white/30" />
+              <Car className="h-5 w-5 text-white/30" />
             </div>
           </div>
 
@@ -307,7 +307,7 @@ const Home = () => {
                   asChild
                 >
                   <Link to="/search?amenities=Pool,Hot tub">
-                    ����️ Beach Vibes
+                    🏖️ Beach Vibes
                   </Link>
                 </Button>
                 <Button
