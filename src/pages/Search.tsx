@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { GridIcon, ListIcon, MapIcon } from "lucide-react";
+import { Grid, List, Map } from "lucide-react";
 import { mockProperties } from "@/lib/mockData";
 import { SearchFilters as SearchFiltersType, Property } from "@/lib/types";
 
@@ -238,15 +238,15 @@ const Search = () => {
                       onClick={() => setViewMode("grid")}
                       className="rounded-r-none"
                     >
-                      <GridIcon className="h-4 w-4" />
+                      <Grid className="mr-2 h-4 w-4" />
+                      Grid
                     </Button>
                     <Button
-                      variant={viewMode === "list" ? "default" : "ghost"}
+                      variant={viewMode === "list" ? "default" : "outline"}
                       size="sm"
                       onClick={() => setViewMode("list")}
-                      className="rounded-l-none rounded-r-none border-x"
                     >
-                      <ListIcon className="h-4 w-4" />
+                      <List className="mr-2 h-4 w-4" />
                     </Button>
                     <Button
                       variant="ghost"

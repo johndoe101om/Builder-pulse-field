@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { HeartIcon, SearchIcon, CompassIcon, HomeIcon } from "lucide-react";
+import { Heart, Search, Compass, Home } from "lucide-react";
 import { useWishlist } from "@/contexts/WishlistContext";
 import { useAuth } from "@/contexts/AuthContext";
 
