@@ -129,6 +129,12 @@ export const Header = ({ onSearch }: HeaderProps) => {
                     Host dashboard
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/admin-dashboard" className="flex items-center">
+                    <SettingsIcon className="mr-2 h-4 w-4" />
+                    Admin Panel
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <SettingsIcon className="mr-2 h-4 w-4" />

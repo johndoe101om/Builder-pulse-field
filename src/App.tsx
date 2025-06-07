@@ -8,6 +8,7 @@ import Search from "./pages/Search";
 import PropertyDetail from "./pages/PropertyDetail";
 import GuestDashboard from "./pages/GuestDashboard";
 import HostDashboard from "./pages/HostDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/guest-dashboard" element={<GuestDashboard />} />
           <Route path="/host-dashboard" element={<HostDashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/profile" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
