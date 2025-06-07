@@ -163,23 +163,47 @@ const Home = () => {
           </div>
 
           {/* Moving Transportation Vehicles */}
-          <div className="absolute top-32 left-10 animate-bounce delay-700">
-            <TrainIcon className="h-9 w-9 text-white/35 rotate-12" />
+          <div className="absolute top-32 left-10">
+            <div className="animate-[moveRight_20s_linear_infinite]">
+              <TrainIcon className="h-9 w-9 text-white/35" />
+            </div>
           </div>
-          <div className="absolute bottom-40 right-20 animate-pulse delay-1500">
-            <BusIcon className="h-7 w-7 text-white/30 -rotate-6" />
+          <div className="absolute bottom-40 right-20">
+            <div className="animate-[moveLeft_25s_linear_infinite]">
+              <BusIcon className="h-7 w-7 text-white/30" />
+            </div>
           </div>
-          <div className="absolute top-72 left-60 animate-bounce delay-300">
-            <CarIcon className="h-6 w-6 text-white/40 rotate-45" />
+          <div className="absolute top-72 left-60">
+            <div className="animate-[moveRightSlow_30s_linear_infinite]">
+              <CarIcon className="h-6 w-6 text-white/40" />
+            </div>
           </div>
-          <div className="absolute bottom-60 left-20 animate-pulse delay-2500">
-            <TrainIcon className="h-8 w-8 text-white/25 -rotate-12" />
+          <div className="absolute bottom-60 left-20">
+            <div className="animate-[moveRightFast_15s_linear_infinite]">
+              <TrainIcon className="h-8 w-8 text-white/25" />
+            </div>
           </div>
-          <div className="absolute top-36 right-80 animate-bounce delay-1800">
-            <BusIcon className="h-8 w-8 text-white/35 rotate-6" />
+          <div className="absolute top-36 right-80">
+            <div className="animate-[moveLeft_22s_linear_infinite]">
+              <BusIcon className="h-8 w-8 text-white/35" />
+            </div>
           </div>
-          <div className="absolute bottom-20 right-40 animate-pulse delay-600">
-            <CarIcon className="h-7 w-7 text-white/30 -rotate-45" />
+          <div className="absolute bottom-20 right-40">
+            <div className="animate-[moveLeftFast_18s_linear_infinite]">
+              <CarIcon className="h-7 w-7 text-white/30" />
+            </div>
+          </div>
+
+          {/* Additional moving vehicles for more activity */}
+          <div className="absolute top-80 left-80">
+            <div className="animate-[moveRight_35s_linear_infinite] delay-1000">
+              <PlaneIcon className="h-6 w-6 text-white/25 rotate-45" />
+            </div>
+          </div>
+          <div className="absolute bottom-80 right-60">
+            <div className="animate-[moveLeft_28s_linear_infinite] delay-2000">
+              <CarIcon className="h-5 w-5 text-white/30" />
+            </div>
           </div>
 
           {/* Travel Route Lines */}
@@ -283,7 +307,7 @@ const Home = () => {
                   asChild
                 >
                   <Link to="/search?amenities=Pool,Hot tub">
-                    🏖️ Beach Vibes
+                    ����️ Beach Vibes
                   </Link>
                 </Button>
                 <Button
