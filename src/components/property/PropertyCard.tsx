@@ -28,6 +28,33 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
     availability,
   } = property;
 
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const { isInWishlist, toggleWishlist } = useWishlist();
+
+  const isWishlisted = isInWishlist(id);
+
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!user) {
+      toast.error("Please log in to save properties to your wishlist");
+      navigate("/login", {
+        state: { from: { pathname: window.location.pathname } },
+      });
+      return;
+    }
+
+    toggleWishlist(property);
+
+    if (isWishlisted) {
+      toast.success("Removed from wishlist");
+    } else {
+      toast.success("Added to wishlist");
+    }
+  };
+
   return (
     <Card
       className={cn(
