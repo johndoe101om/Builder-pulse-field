@@ -18,7 +18,7 @@ const Wishlist = () => {
         <Header />
         <main className="flex-1 bg-gray-50 flex items-center justify-center">
           <div className="text-center max-w-md mx-auto p-8">
-            <HeartIcon className="h-16 w-16 text-gray-300 mx-auto mb-6" />
+            <Heart className="h-16 w-16 text-gray-300 mx-auto mb-6" />
             <h1 className="text-2xl font-bold text-gray-900 mb-4">
               Sign in to save your favorites
             </h1>
@@ -50,7 +50,7 @@ const Wishlist = () => {
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <HeartIcon className="h-8 w-8 text-red-500 fill-current" />
+              <Heart className="h-8 w-8 text-red-500 fill-current" />
               <h1 className="text-3xl font-bold text-gray-900">
                 Your Wishlist
               </h1>
@@ -67,24 +67,23 @@ const Wishlist = () => {
             <div className="text-center py-16">
               <Card className="max-w-md mx-auto">
                 <CardContent className="p-12">
-                  <HeartIcon className="h-16 w-16 text-gray-300 mx-auto mb-6" />
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    Your wishlist is empty
-                  </h2>
+                  <Heart className="h-16 w-16 text-gray-300 mx-auto mb-6" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    No saved properties yet
+                  </h3>
                   <p className="text-gray-600 mb-6">
-                    Start exploring and save properties you love by clicking the
-                    heart icon.
+                    Start exploring and save properties you love!
                   </p>
                   <div className="space-y-3">
                     <Button asChild className="w-full">
                       <Link to="/search">
-                        <SearchIcon className="mr-2 h-4 w-4" />
-                        Start Exploring
+                        <Search className="mr-2 h-4 w-4" />
+                        Explore Properties
                       </Link>
                     </Button>
                     <Button variant="outline" asChild className="w-full">
-                      <Link to="/">
-                        <CompassIcon className="mr-2 h-4 w-4" />
+                      <Link to="/search?amenities=Pool,Hot tub">
+                        <Compass className="mr-2 h-4 w-4" />
                         Discover Adventures
                       </Link>
                     </Button>
@@ -100,7 +99,7 @@ const Wishlist = () => {
                 <div className="flex items-center gap-4">
                   <Button variant="outline" asChild>
                     <Link to="/search">
-                      <SearchIcon className="mr-2 h-4 w-4" />
+                      <Search className="mr-2 h-4 w-4" />
                       Find More Properties
                     </Link>
                   </Button>
@@ -128,7 +127,7 @@ const Wishlist = () => {
                     {/* Wishlist Badge */}
                     <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="bg-white/90 backdrop-blur-sm rounded-full p-1">
-                        <HeartIcon className="h-4 w-4 text-red-500 fill-current" />
+                        <Heart className="h-4 w-4 text-red-500 fill-current" />
                       </div>
                     </div>
                   </div>
@@ -140,7 +139,7 @@ const Wishlist = () => {
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CompassIcon className="h-6 w-6 text-blue-600" />
+                      <Compass className="h-6 w-6 text-blue-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">
