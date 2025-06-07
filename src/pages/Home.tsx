@@ -130,7 +130,7 @@ const Home = () => {
       desc: "Secret places locals love to share",
     },
     {
-      icon: GlobeIcon,
+      icon: Globe,
       title: "Cultural Immersion",
       desc: "Live like a local, think like a traveler",
     },
