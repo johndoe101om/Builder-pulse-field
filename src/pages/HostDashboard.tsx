@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import {
-  PlusIcon,
+  Plus,
   HomeIcon,
   CalendarIcon,
   DollarSign,
@@ -217,7 +217,7 @@ const HostDashboard = () => {
             </div>
             <Button asChild>
               <Link to="/add-listing">
-                <PlusIcon className="h-4 w-4 mr-2" />
+                <Plus className="h-4 w-4 mr-2" />
                 Add listing
               </Link>
             </Button>
@@ -450,7 +450,7 @@ const HostDashboard = () => {
                     </p>
                     <Button asChild>
                       <Link to="/add-listing">
-                        <PlusIcon className="h-4 w-4 mr-2" />
+                        <Plus className="h-4 w-4 mr-2" />
                         Create listing
                       </Link>
                     </Button>
