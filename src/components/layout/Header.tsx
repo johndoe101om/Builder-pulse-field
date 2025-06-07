@@ -100,7 +100,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                 }
               }}
             >
-              <HeartIcon className="h-4 w-4" />
+              <Heart className="h-4 w-4" />
               {user && wishlistCount > 0 && (
                 <Badge
                   variant="destructive"
@@ -183,7 +183,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <Link to="/wishlist" className="flex items-center">
-                        <HeartIcon className="mr-2 h-4 w-4" />
+                        <Heart className="mr-2 h-4 w-4" />
                         Wishlist
                         {wishlistCount > 0 && (
                           <Badge variant="secondary" className="ml-auto">
