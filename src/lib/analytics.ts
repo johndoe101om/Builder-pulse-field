@@ -196,7 +196,7 @@ export const generateExtendedMockBookings = (
           checkIn: format(checkInDate, "yyyy-MM-dd"),
           checkOut: format(checkOutDate, "yyyy-MM-dd"),
           guests: Math.floor(Math.random() * 6) + 1,
-          totalPrice: Math.floor(Math.random() * 2000) + 200,
+          totalPrice: Math.floor(Math.random() * 160000) + 16000,
           status: ["confirmed", "completed", "pending", "cancelled"][
             Math.floor(Math.random() * 4)
           ] as any,
