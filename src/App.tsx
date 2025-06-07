@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import PropertyDetail from "./pages/PropertyDetail";
@@ -31,12 +32,54 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
-            <Route path="/booking/:id" element={<BookingPayment />} />
-            <Route path="/guest-dashboard" element={<GuestDashboard />} />
-            <Route path="/host-dashboard" element={<HostDashboard />} />
-            <Route path="/admin-dashboard" element={<AdminDashboard />} />
-            <Route path="/add-listing" element={<AddListing />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/booking/:id"
+              element={
+                <ProtectedRoute>
+                  <BookingPayment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/guest-dashboard"
+              element={
+                <ProtectedRoute>
+                  <GuestDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/host-dashboard"
+              element={
+                <ProtectedRoute>
+                  <HostDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/add-listing"
+              element={
+                <ProtectedRoute>
+                  <AddListing />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             {/* Super Admin Route - Separate and Hidden */}

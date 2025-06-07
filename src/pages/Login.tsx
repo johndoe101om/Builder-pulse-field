@@ -192,6 +192,7 @@ const Login = () => {
                 Don't have an account?{" "}
                 <Link
                   to="/signup"
+                  state={location.state}
                   className="text-primary hover:underline font-medium"
                 >
                   Sign up

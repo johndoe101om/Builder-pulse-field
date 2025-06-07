@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
@@ -31,7 +32,19 @@ import { mockProperties } from "@/lib/mockData";
 const Home = () => {
   const [currentDestination, setCurrentDestination] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const featuredProperties = mockProperties.slice(0, 3);
+
+  const handleHostingClick = () => {
+    if (user) {
+      navigate("/add-listing");
+    } else {
+      navigate("/signup", {
+        state: { from: { pathname: "/add-listing" }, hostingIntent: true },
+      });
+    }
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -541,13 +554,11 @@ const Home = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:to-red-600 text-black font-bold text-lg px-8 py-4 shadow-2xl transform hover:scale-105 transition-all"
-              asChild
+              onClick={handleHostingClick}
             >
-              <Link to="/add-listing">
-                <HomeIcon className="mr-3 h-6 w-6" />
-                Start Hosting Adventures
-                <ArrowRightIcon className="ml-3 h-6 w-6" />
-              </Link>
+              <HomeIcon className="mr-3 h-6 w-6" />
+              Start Hosting Adventures
+              <ArrowRightIcon className="ml-3 h-6 w-6" />
             </Button>
             <span className="text-gray-400 text-lg">or</span>
             <Button

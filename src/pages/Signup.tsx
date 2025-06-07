@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -25,17 +25,21 @@ import {
 import { useAuth } from "@/contexts/AuthContext";
 
 const Signup = () => {
+  const location = useLocation();
+  const isHostingIntent = location.state?.hostingIntent;
+  const from = location.state?.from?.pathname || '/';
+
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    role: "guest" as "guest" | "host",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    role: (isHostingIntent ? 'host' : 'guest') as 'guest' | 'host',
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const { signup, isLoading } = useAuth();
   const navigate = useNavigate();
 
@@ -73,9 +77,10 @@ const Signup = () => {
     });
 
     if (success) {
-      navigate("/");
+      navigate(from, { replace: true });
     } else {
-      setError("Email already exists or signup failed");
+      setError('Email already exists or signup failed');
+    }
     }
   };
 
@@ -102,20 +107,24 @@ const Signup = () => {
             <span className="text-3xl font-black text-white">StayConnect</span>
           </Link>
           <h1 className="text-2xl font-bold text-white mb-2">
-            Join the Adventure!
+            {isHostingIntent ? 'Start Your Hosting Journey!' : 'Join the Adventure!'}
           </h1>
           <p className="text-white/80">
-            Create your account and start exploring
+            {isHostingIntent
+              ? 'Create your account to list your property and start earning'
+              : 'Create your account and start exploring'
+            }
           </p>
         </div>
 
         <Card className="backdrop-blur-lg bg-white/95 border-white/20 shadow-2xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">
-              Create Account
-            </CardTitle>
+            <CardTitle className="text-2xl text-center">Create Account</CardTitle>
             <CardDescription className="text-center">
-              Choose your adventure type and get started
+              {isHostingIntent
+                ? 'Set up your hosting account to start earning'
+                : 'Choose your adventure type and get started'
+              }
             </CardDescription>
           </CardHeader>
           <CardContent>
