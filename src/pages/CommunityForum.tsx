@@ -18,7 +18,7 @@ import {
   PinIcon,
   StarIcon,
   EyeIcon,
-  PlusIcon,
+  Plus,
   FilterIcon,
   HomeIcon,
   IndianRupeeIcon,
@@ -268,7 +268,7 @@ const CommunityForum = () => {
                   Filter
                 </Button>
                 <Button>
-                  <PlusIcon className="mr-2 h-4 w-4" />
+                  <Plus className="mr-2 h-4 w-4" />
                   New Post
                 </Button>
               </div>
