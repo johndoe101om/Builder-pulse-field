@@ -9,14 +9,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import {
-  CalendarIcon,
-  MapPinIcon,
-  UsersIcon,
-  SearchIcon,
-  MinusIcon,
-  PlusIcon,
-} from "lucide-react";
+import { Calendar, MapPin, Search, User, CalendarDays } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
@@ -89,7 +82,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
             Where
           </Label>
           <div className="relative">
-            <MapPinIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="text"
               placeholder="Search destinations"
