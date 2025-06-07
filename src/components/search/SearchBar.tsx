@@ -228,7 +228,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
               isHero ? "h-12 w-12 p-0" : "h-8 w-8 p-0",
             )}
           >
-            <SearchIcon className={cn(isHero ? "h-5 w-5" : "h-4 w-4")} />
+            <Search className={cn(isHero ? "h-5 w-5" : "h-4 w-4")} />
           </Button>
         </div>
       </div>
