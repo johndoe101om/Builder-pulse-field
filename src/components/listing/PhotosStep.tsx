@@ -49,10 +49,22 @@ export const PhotosStep = ({ control, watch, setValue }: PhotosStepProps) => {
     const availableImages = sampleImages.filter(
       (img) => !watchedImages.includes(img),
     );
-    if (availableImages.length > 0) {
+    if (availableImages.length > 0 && watchedImages.length < 24) {
       const randomImage =
         availableImages[Math.floor(Math.random() * availableImages.length)];
       setValue("images", [...watchedImages, randomImage]);
+    }
+  };
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      // In a real app, you would upload these files and get URLs
+      // For demo, we'll add sample images
+      const filesToAdd = Math.min(files.length, 24 - watchedImages.length);
+      for (let i = 0; i < filesToAdd; i++) {
+        addSampleImage();
+      }
     }
   };
 
@@ -96,16 +108,29 @@ export const PhotosStep = ({ control, watch, setValue }: PhotosStepProps) => {
                   : "border-gray-300 hover:border-gray-400"
               }
             `}
-            onClick={addSampleImage}
+            onClick={() => document.getElementById("photo-upload")?.click()}
           >
             <UploadIcon className="h-12 w-12 mx-auto text-gray-400 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Upload Photos</h3>
             <p className="text-gray-600 mb-4">
               Drag and drop your photos here, or click to browse
             </p>
-            <Button variant="outline">Choose Files</Button>
+            <Button variant="outline" type="button">
+              Choose Files
+            </Button>
+            <input
+              id="photo-upload"
+              type="file"
+              multiple
+              accept="image/*"
+              className="hidden"
+              onChange={handleFileUpload}
+            />
             <p className="text-sm text-gray-500 mt-2">
-              For demo purposes, clicking will add sample images
+              JPEG, PNG, WebP (max 24 photos, 10MB each)
+            </p>
+            <p className="text-xs text-blue-600 mt-1">
+              Demo: File upload will add sample images
             </p>
           </div>
 

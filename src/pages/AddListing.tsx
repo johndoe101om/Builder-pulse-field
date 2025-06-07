@@ -13,6 +13,7 @@ import { AmenitiesStep } from "@/components/listing/AmenitiesStep";
 import { PricingStep } from "@/components/listing/PricingStep";
 import { PhotosStep } from "@/components/listing/PhotosStep";
 import { RulesStep } from "@/components/listing/RulesStep";
+import { PaymentStep } from "@/components/listing/PaymentStep";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -23,6 +24,7 @@ import {
   DollarSignIcon,
   ImageIcon,
   ShieldIcon,
+  CreditCardIcon,
 } from "lucide-react";
 import { ListingFormData } from "@/lib/types";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
@@ -129,6 +131,14 @@ const AddListing = () => {
       component: RulesStep,
       required: [],
     },
+    {
+      id: 6,
+      title: "Payment",
+      description: "Review and publish",
+      icon: CreditCardIcon,
+      component: PaymentStep,
+      required: [],
+    },
   ];
 
   const currentStepData = steps[currentStep];
@@ -169,8 +179,36 @@ const AddListing = () => {
   const onSubmit = async (data: ListingFormData) => {
     console.log("Listing data:", data);
 
-    // In a real app, this would save to backend
-    alert("Listing created successfully! (This is a demo)");
+    // Validate required fields
+    if (
+      !data.title ||
+      !data.description ||
+      !data.location.address ||
+      !data.pricing.basePrice
+    ) {
+      alert(
+        "Please complete all required fields before publishing your listing.",
+      );
+      return;
+    }
+
+    // Check if terms are accepted (in a real app, this would be part of form validation)
+    const termsCheckbox = document.getElementById("terms") as HTMLInputElement;
+    if (!termsCheckbox?.checked) {
+      alert("Please accept the Terms of Service to publish your listing.");
+      return;
+    }
+
+    // In a real app, this would:
+    // 1. Upload images to cloud storage
+    // 2. Save listing to database
+    // 3. Process payment setup
+    // 4. Send confirmation email
+    // 5. Activate listing
+
+    alert(
+      "🎉 Congratulations! Your listing has been published successfully!\n\nYour property is now live and ready to receive bookings. You will receive an email confirmation shortly.",
+    );
     navigate("/host-dashboard");
   };
 
@@ -292,9 +330,13 @@ const AddListing = () => {
                   </div>
 
                   {currentStep === steps.length - 1 ? (
-                    <Button type="submit">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="bg-green-600 hover:bg-green-700"
+                    >
                       <CheckIcon className="h-4 w-4 mr-2" />
-                      Create Listing
+                      Publish Listing
                     </Button>
                   ) : (
                     <Button type="button" onClick={nextStep}>
