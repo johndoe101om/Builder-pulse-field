@@ -49,12 +49,12 @@ export const GUEST_CAPACITY_OPTIONS = [
 ];
 
 export const PRICE_RANGES = [
-  { value: [0, 100], label: "Under $100" },
-  { value: [100, 200], label: "$100 - $200" },
-  { value: [200, 300], label: "$200 - $300" },
-  { value: [300, 500], label: "$300 - $500" },
-  { value: [500, 1000], label: "$500 - $1000" },
-  { value: [1000, 10000], label: "$1000+" },
+  { value: [0, 8000], label: "Under ₹8,000" },
+  { value: [8000, 16000], label: "₹8,000 - ₹16,000" },
+  { value: [16000, 24000], label: "₹16,000 - ₹24,000" },
+  { value: [24000, 40000], label: "₹24,000 - ₹40,000" },
+  { value: [40000, 80000], label: "₹40,000 - ₹80,000" },
+  { value: [80000, 800000], label: "₹80,000+" },
 ];
 
 export const BOOKING_STATUS_LABELS = {
@@ -64,6 +64,6 @@ export const BOOKING_STATUS_LABELS = {
   completed: "Completed",
 };
 
-export const CURRENCY_SYMBOL = "$";
+export const CURRENCY_SYMBOL = "₹";
 export const PLATFORM_FEE_PERCENTAGE = 0.03; // 3%
-export const CLEANING_FEE_DEFAULT = 25;
+export const CLEANING_FEE_DEFAULT = 2000;

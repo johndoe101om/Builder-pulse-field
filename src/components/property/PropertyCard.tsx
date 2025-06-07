@@ -64,7 +64,7 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
     >
       <div className="relative">
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+        <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
           <img
             src={images[0]}
             alt={title}
