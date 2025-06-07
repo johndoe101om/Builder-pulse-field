@@ -78,42 +78,16 @@ const Home = () => {
 
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Right Side - Interactive Search */}
-            <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
-              <div className="bg-white/15 backdrop-blur-xl border border-white/30 rounded-3xl p-6 shadow-2xl">
-                <h3 className="text-2xl font-bold mb-6 text-center text-white">Find Your Next Adventure</h3>
-
-                {/* Enhanced Search Form */}
-                <div className="space-y-4">
-                  <div className="bg-white rounded-2xl p-4 shadow-lg">
-                    <SearchBar variant="compact" />
-                  </div>
-
-                  {/* Quick Filters */}
-                  <div>
-                    <p className="text-sm text-white/80 mb-3 font-medium">Popular destinations</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {['🏖️ Bali', '🗼 Paris', '🏔️ Alps', '🌴 Miami'].map((dest) => (
-                        <Button
-                          key={dest}
-                          variant="outline"
-                          size="sm"
-                          className="border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10 justify-start"
-                        >
-                          {dest}
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Search CTA */}
-                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold border-0">
-                    Search Properties
-                    <ArrowRightIcon className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
+            {/* Left Side - Content */}
+            <div
+              className={`transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}
+            >
+              <div className="mb-6">
+                <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium">
+                  <SparklesIcon className="h-4 w-4" />
+                  Welcome to the Future of Travel
+                </span>
               </div>
-            </div>
 
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 Stay
@@ -154,13 +128,48 @@ const Home = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold shadow-lg hover:shadow-xl transition-all">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold shadow-lg hover:shadow-xl transition-all"
+                >
                   Start Exploring
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10 shadow-lg">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10 shadow-lg"
+                >
                   <PlayCircleIcon className="mr-2 h-5 w-5" />
                   Watch Demo
+                </Button>
+              </div>
+
+              {/* Quick Links */}
+              <div className="flex flex-wrap justify-center sm:justify-start gap-3 text-sm mt-6">
+                <Button
+                  variant="outline"
+                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
+                >
+                  🏖️ Beach homes
+                </Button>
+                <Button
+                  variant="outline"
+                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
+                >
+                  🏔️ Mountain retreats
+                </Button>
+                <Button
+                  variant="outline"
+                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
+                >
+                  🏙️ City apartments
+                </Button>
+                <Button
+                  variant="outline"
+                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
+                >
+                  🏡 Unique stays
                 </Button>
               </div>
             </div>
@@ -169,31 +178,43 @@ const Home = () => {
             <div
               className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center">
+              <div className="bg-white/15 backdrop-blur-xl border border-white/30 rounded-3xl p-6 shadow-2xl">
+                <h3 className="text-2xl font-bold mb-6 text-center text-white">
                   Find Your Next Adventure
                 </h3>
-                <SearchBar variant="compact" />
 
-                {/* Quick Filters */}
-                <div className="mt-6">
-                  <p className="text-sm text-white/70 mb-3">
-                    Popular destinations
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {["🏖️ Bali", "🗼 Paris", "🏔️ Alps", "🌴 Miami"].map(
-                      (dest) => (
-                        <Button
-                          key={dest}
-                          variant="outline"
-                          size="sm"
-                          className="border-white/30 text-white hover:bg-white/10"
-                        >
-                          {dest}
-                        </Button>
-                      ),
-                    )}
+                {/* Enhanced Search Form */}
+                <div className="space-y-4">
+                  <div className="bg-white rounded-2xl p-4 shadow-lg">
+                    <SearchBar variant="compact" />
                   </div>
+
+                  {/* Quick Filters */}
+                  <div>
+                    <p className="text-sm text-white/80 mb-3 font-medium">
+                      Popular destinations
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {["🏖️ Bali", "🗼 Paris", "🏔️ Alps", "🌴 Miami"].map(
+                        (dest) => (
+                          <Button
+                            key={dest}
+                            variant="outline"
+                            size="sm"
+                            className="border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10 justify-start"
+                          >
+                            {dest}
+                          </Button>
+                        ),
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Search CTA */}
+                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold border-0">
+                    Search Properties
+                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             </div>
