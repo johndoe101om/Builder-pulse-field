@@ -128,48 +128,38 @@ const Home = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold shadow-lg hover:shadow-xl transition-all"
-                >
-                  Start Exploring
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold shadow-lg hover:shadow-xl transition-all" asChild>
+                  <Link to="/search">
+                    Start Exploring
+                    <ArrowRightIcon className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10 shadow-lg"
-                >
+                <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10 shadow-lg">
                   <PlayCircleIcon className="mr-2 h-5 w-5" />
                   Watch Demo
                 </Button>
               </div>
-
               {/* Quick Links */}
               <div className="flex flex-wrap justify-center sm:justify-start gap-3 text-sm mt-6">
-                <Button
-                  variant="outline"
-                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
-                >
-                  🏖️ Beach homes
+                <Button variant="outline" className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10" asChild>
+                  <Link to="/search?amenities=Pool,Hot tub">
+                    🏖️ Beach homes
+                  </Link>
                 </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
-                >
-                  🏔️ Mountain retreats
+                <Button variant="outline" className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10" asChild>
+                  <Link to="/search?amenities=Fireplace,Heating">
+                    🏔️ Mountain retreats
+                  </Link>
                 </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
-                >
-                  🏙️ City apartments
+                <Button variant="outline" className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10" asChild>
+                  <Link to="/search?propertyTypes=entire-home">
+                    🏙️ City apartments
+                  </Link>
                 </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10"
-                >
-                  🏡 Unique stays
+                <Button variant="outline" className="rounded-full border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10" asChild>
+                  <Link to="/search">
+                    🏡 Unique stays
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -195,25 +185,28 @@ const Home = () => {
                       Popular destinations
                     </p>
                     <div className="grid grid-cols-2 gap-2">
-                      {["🏖️ Bali", "🗼 Paris", "🏔️ Alps", "🌴 Miami"].map(
-                        (dest) => (
-                          <Button
-                            key={dest}
-                            variant="outline"
-                            size="sm"
-                            className="border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10 justify-start"
-                          >
+                      {['🏖️ Bali', '🗼 Paris', '🏔️ Alps', '🌴 Miami'].map((dest) => (
+                        <Button
+                          key={dest}
+                          variant="outline"
+                          size="sm"
+                          className="border-white/40 text-white hover:bg-white/20 hover:border-white/60 backdrop-blur-sm bg-white/10 justify-start"
+                          asChild
+                        >
+                          <Link to={`/search?location=${dest.split(' ')[1]}`}>
                             {dest}
-                          </Button>
-                        ),
-                      )}
+                          </Link>
+                        </Button>
+                      ))}
                     </div>
                   </div>
 
                   {/* Search CTA */}
-                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold border-0">
-                    Search Properties
-                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold border-0" asChild>
+                    <Link to="/search">
+                      Search Properties
+                      <ArrowRightIcon className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -407,8 +400,13 @@ const Home = () => {
                 <div className="text-3xl font-black text-yellow-400 mb-2">
                   {stat.title}
                 </div>
-                <div className="text-gray-400">{stat.subtitle}</div>
-              </div>
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/search">
+                View all properties
+              </Link>
+            </Button>
+          </div>
             ))}
           </div>
         </div>
