@@ -287,7 +287,7 @@ const Home = () => {
                   <Link to="/search">
                     <Compass className="mr-2 h-5 w-5" />
                     Start Your Journey
-                    <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button
@@ -295,7 +295,7 @@ const Home = () => {
                   variant="outline"
                   className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10 shadow-lg"
                 >
-                  <PlayCircleIcon className="mr-2 h-5 w-5" />
+                  <PlayCircle className="mr-2 h-5 w-5" />
                   Watch Travel Stories
                 </Button>
               </div>
@@ -449,7 +449,7 @@ const Home = () => {
             <Button size="lg" variant="outline" asChild>
               <Link to="/search">
                 View All Properties
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -463,7 +463,7 @@ const Home = () => {
           <div>
             <div className="mb-8">
               <span className="inline-flex items-center gap-3 bg-amber-100 text-amber-800 border border-amber-200 rounded-full px-6 py-3 text-sm font-medium">
-                <SparklesIcon className="h-5 w-5" />
+                <Sparkles className="h-5 w-5" />
                 Share Your Space, Earn Great Income
               </span>
             </div>
@@ -496,7 +496,7 @@ const Home = () => {
                 variant="outline"
                 className="border-white/50 text-white hover:bg-white/20 hover:border-white/70 backdrop-blur-sm bg-white/10"
               >
-                <PlayCircleIcon className="mr-2 h-5 w-5" />
+                <PlayCircle className="mr-2 h-5 w-5" />
                 Watch Host Stories
               </Button>
             </div>
