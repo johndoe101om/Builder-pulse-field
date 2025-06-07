@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import {
   LeafIcon,
   RecycleIcon,
-  WaterDropIcon,
+  DropletsIcon,
   ZapIcon,
   TreesIcon,
   UsersIcon,
@@ -94,7 +94,7 @@ const ResponsibleHosting = () => {
     },
     {
       title: "Water Conservation",
-      icon: WaterDropIcon,
+      icon: DropletsIcon,
       measures: [
         "Low-flow showerheads and faucets",
         "Dual-flush toilets",
