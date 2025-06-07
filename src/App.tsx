@@ -36,6 +36,7 @@ import HostGuarantee from "./pages/HostGuarantee";
 
 // Company Pages
 import About from "./pages/About";
+import Careers from "./pages/Careers";
 
 const queryClient = new QueryClient();
 
@@ -135,10 +136,7 @@ const App = () => (
 
               {/* Company Routes */}
               <Route path="/about" element={<About />} />
-              <Route
-                path="/careers"
-                element={<div>Careers page coming soon...</div>}
-              />
+              <Route path="/careers" element={<Careers />} />
               <Route
                 path="/press"
                 element={<div>Press page coming soon...</div>}
@@ -155,7 +153,6 @@ const App = () => (
                 path="/privacy"
                 element={<div>Privacy Policy page coming soon...</div>}
               />
-
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
