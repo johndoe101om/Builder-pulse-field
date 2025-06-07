@@ -8,16 +8,16 @@ import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  HomeIcon,
-  MapPinIcon,
-  StarIcon,
-  UsersIcon,
-  TrendingUpIcon,
-  GlobeIcon,
-  SparklesIcon,
-  ArrowRightIcon,
-  PlayCircleIcon,
-  ChevronDownIcon,
+  Home as HomeIcon,
+  MapPin,
+  Star,
+  Users,
+  TrendingUp,
+  Globe,
+  Sparkles,
+  ArrowRight,
+  PlayCircle,
+  ChevronDown,
   Compass,
   Plane,
   Mountain,
@@ -29,7 +29,7 @@ import {
   Train,
   Bus,
   Car,
-  ShieldIcon,
+  Shield,
 } from "lucide-react";
 import { mockProperties } from "@/lib/mockData";
 
