@@ -95,8 +95,8 @@ export const SearchFilters = ({
               className="w-full"
             />
             <div className="flex justify-between text-sm text-muted-foreground mt-2">
-              <span>${localFilters.priceRange?.[0] || 0}</span>
-              <span>${localFilters.priceRange?.[1] || 1000}+</span>
+              <span>₹{localFilters.priceRange?.[0] || 0}</span>
+              <span>₹{localFilters.priceRange?.[1] || 80000}+</span>
             </div>
           </div>
         </div>
