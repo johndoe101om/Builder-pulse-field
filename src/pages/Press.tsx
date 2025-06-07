@@ -13,7 +13,7 @@ import {
   HomeIcon,
   AwardIcon,
   ExternalLink,
-  ImageIcon,
+  Image,
 } from "lucide-react";
 
 const Press = () => {
