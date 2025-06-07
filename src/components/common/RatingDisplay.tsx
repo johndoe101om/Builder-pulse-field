@@ -30,13 +30,13 @@ export const RatingDisplay = ({
 
   return (
     <div className={cn("flex items-center", className)}>
-      <StarIcon
+      <Star
         className={cn(
           "fill-yellow-400 text-yellow-400 mr-1",
           sizeClasses[size],
         )}
       />
-      <Star className={cn("h-4 w-4 fill-yellow-400 text-yellow-400", className)} />
+      <span className={cn("font-medium", textSizeClasses[size])}>
         {rating.toFixed(1)}
       </span>
       {showCount && reviewCount !== undefined && (
