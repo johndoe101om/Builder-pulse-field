@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StarIcon, HeartIcon, MapPinIcon } from "lucide-react";
+import { Star, Heart, MapPin } from "lucide-react";
 import { Property } from "@/lib/types";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -77,7 +77,7 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
             className="absolute top-3 right-3 h-8 w-8 p-0 bg-white/80 hover:bg-white/90 rounded-full transition-all duration-200 hover:scale-110"
             onClick={handleWishlistClick}
           >
-            <HeartIcon
+            <Heart
               className={cn(
                 "h-4 w-4 transition-all duration-200",
                 isWishlisted
@@ -100,13 +100,13 @@ export const PropertyCard = ({ property, className }: PropertyCardProps) => {
         {/* Location and Rating */}
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center text-sm text-muted-foreground">
-            <MapPinIcon className="h-3 w-3 mr-1" />
+            <MapPin className="h-3 w-3 mr-1" />
             <span>
               {location.city}, {location.state}
             </span>
           </div>
           <div className="flex items-center">
-            <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
+            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
             <span className="text-sm font-medium">{rating}</span>
             <span className="text-sm text-muted-foreground ml-1">
               ({reviewCount})

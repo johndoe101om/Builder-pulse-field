@@ -1,4 +1,4 @@
-import { StarIcon } from "lucide-react";
+import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface RatingDisplayProps {
@@ -36,7 +36,7 @@ export const RatingDisplay = ({
           sizeClasses[size],
         )}
       />
-      <span className={cn("font-medium", textSizeClasses[size])}>
+      <Star className={cn("h-4 w-4 fill-yellow-400 text-yellow-400", className)} />
         {rating.toFixed(1)}
       </span>
       {showCount && reviewCount !== undefined && (

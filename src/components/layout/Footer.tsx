@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HomeIcon, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Home, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <HomeIcon className="h-6 w-6 text-primary" />
+              <Home className="h-6 w-6 text-primary" />
               <span className="text-lg font-bold">StayConnect</span>
             </Link>
             <p className="text-sm text-muted-foreground">
