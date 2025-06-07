@@ -2,7 +2,7 @@ import { Control, UseFormRegister } from "react-hook-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MapPinIcon } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { ListingFormData } from "@/lib/types";
 
 interface LocationStepProps {
@@ -16,7 +16,7 @@ export const LocationStep = ({ register, control }: LocationStepProps) => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <MapPinIcon className="h-5 w-5" />
+            <MapPin className="h-5 w-5" />
             Property Location
           </CardTitle>
         </CardHeader>
