@@ -37,6 +37,10 @@ import HostGuarantee from "./pages/HostGuarantee";
 // Company Pages
 import About from "./pages/About";
 import Careers from "./pages/Careers";
+import Press from "./pages/Press";
+import Investors from "./pages/Investors";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -137,22 +141,10 @@ const App = () => (
               {/* Company Routes */}
               <Route path="/about" element={<About />} />
               <Route path="/careers" element={<Careers />} />
-              <Route
-                path="/press"
-                element={<div>Press page coming soon...</div>}
-              />
-              <Route
-                path="/investors"
-                element={<div>Investors page coming soon...</div>}
-              />
-              <Route
-                path="/terms"
-                element={<div>Terms of Service page coming soon...</div>}
-              />
-              <Route
-                path="/privacy"
-                element={<div>Privacy Policy page coming soon...</div>}
-              />
+              <Route path="/press" element={<Press />} />
+              <Route path="/investors" element={<Investors />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
