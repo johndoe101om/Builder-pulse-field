@@ -27,6 +27,8 @@ interface HeaderProps {
 export const Header = ({ onSearch }: HeaderProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   const isHomePage = location.pathname === "/";
 
@@ -37,13 +39,9 @@ export const Header = ({ onSearch }: HeaderProps) => {
     }
   };
 
-  // Mock user data - in real app this would come from auth context
-  const currentUser = {
-    firstName: "John",
-    lastName: "Doe",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    isLoggedIn: true,
+  const handleLogout = () => {
+    logout();
+    navigate("/");
   };
 
   return (
@@ -81,15 +79,17 @@ export const Header = ({ onSearch }: HeaderProps) => {
 
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
-          {/* Host Link */}
-          <Link to="/add-listing">
-            <Button variant="ghost" className="text-sm font-medium">
-              Become a host
-            </Button>
-          </Link>
+          {/* Host Link - only show for non-super-admin users */}
+          {(!user || user.role !== "superadmin") && (
+            <Link to="/add-listing">
+              <Button variant="ghost" className="text-sm font-medium">
+                Become a host
+              </Button>
+            </Link>
+          )}
 
           {/* User Menu */}
-          {currentUser.isLoggedIn ? (
+          {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -99,48 +99,67 @@ export const Header = ({ onSearch }: HeaderProps) => {
                 >
                   <MenuIcon className="h-4 w-4" />
                   <Avatar className="h-8 w-8">
-                    <AvatarImage
-                      src={currentUser.avatar}
-                      alt={currentUser.firstName}
-                    />
+                    <AvatarImage src={user.avatar} alt={user.firstName} />
                     <AvatarFallback>
-                      {currentUser.firstName[0]}
-                      {currentUser.lastName[0]}
+                      {user.firstName[0]}
+                      {user.lastName[0]}
                     </AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuItem asChild>
-                  <Link to="/profile" className="flex items-center">
-                    <UserIcon className="mr-2 h-4 w-4" />
-                    Profile
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/guest-dashboard" className="flex items-center">
-                    <HomeIcon className="mr-2 h-4 w-4" />
-                    Your trips
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/host-dashboard" className="flex items-center">
-                    <HomeIcon className="mr-2 h-4 w-4" />
-                    Host dashboard
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/admin-dashboard" className="flex items-center">
-                    <SettingsIcon className="mr-2 h-4 w-4" />
-                    Admin Panel
-                  </Link>
-                </DropdownMenuItem>
+                {/* Super Admin gets different menu */}
+                {user.role === "superadmin" ? (
+                  <>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        to="/super-admin-dashboard"
+                        className="flex items-center"
+                      >
+                        <SettingsIcon className="mr-2 h-4 w-4" />
+                        Super Admin Panel
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/admin-dashboard" className="flex items-center">
+                        <SettingsIcon className="mr-2 h-4 w-4" />
+                        Analytics Dashboard
+                      </Link>
+                    </DropdownMenuItem>
+                  </>
+                ) : (
+                  <>
+                    <DropdownMenuItem asChild>
+                      <Link to="/profile" className="flex items-center">
+                        <UserIcon className="mr-2 h-4 w-4" />
+                        Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/guest-dashboard" className="flex items-center">
+                        <HomeIcon className="mr-2 h-4 w-4" />
+                        Your trips
+                      </Link>
+                    </DropdownMenuItem>
+                    {(user.role === "host" || user.role === "guest") && (
+                      <DropdownMenuItem asChild>
+                        <Link
+                          to="/host-dashboard"
+                          className="flex items-center"
+                        >
+                          <HomeIcon className="mr-2 h-4 w-4" />
+                          Host dashboard
+                        </Link>
+                      </DropdownMenuItem>
+                    )}
+                  </>
+                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <SettingsIcon className="mr-2 h-4 w-4" />
                   Settings
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogout}>
                   <LogOutIcon className="mr-2 h-4 w-4" />
                   Log out
                 </DropdownMenuItem>
@@ -148,10 +167,12 @@ export const Header = ({ onSearch }: HeaderProps) => {
             </DropdownMenu>
           ) : (
             <div className="flex items-center space-x-2">
-              <Button variant="ghost" size="sm">
-                Log in
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/login">Log in</Link>
               </Button>
-              <Button size="sm">Sign up</Button>
+              <Button size="sm" asChild>
+                <Link to="/signup">Sign up</Link>
+              </Button>
             </div>
           )}
         </nav>
