@@ -168,7 +168,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <Link to="/admin-dashboard" className="flex items-center">
-                        <SettingsIcon className="mr-2 h-4 w-4" />
+                        <Settings className="mr-2 h-4 w-4" />
                         Analytics Dashboard
                       </Link>
                     </DropdownMenuItem>
@@ -213,7 +213,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                 )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <SettingsIcon className="mr-2 h-4 w-4" />
+                  <Settings className="mr-2 h-4 w-4" />
                   Settings
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogout}>
