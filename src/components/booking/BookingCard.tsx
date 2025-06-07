@@ -131,7 +131,7 @@ export const BookingCard = ({ property, className }: BookingCardProps) => {
         <div>
           <Label className="text-xs font-semibold">GUESTS</Label>
           <div className="relative">
-            <UsersIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="number"
               min="1"
