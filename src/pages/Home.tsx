@@ -146,9 +146,11 @@ const Home = () => {
             Share your space and earn money by welcoming travelers from around
             the world.
           </p>
-          <Button size="lg" variant="secondary">
-            <HomeIcon className="mr-2 h-5 w-5" />
-            Become a host
+          <Button size="lg" variant="secondary" asChild>
+            <Link to="/add-listing">
+              <HomeIcon className="mr-2 h-5 w-5" />
+              Become a host
+            </Link>
           </Button>
         </div>
       </section>

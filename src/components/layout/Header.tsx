@@ -82,7 +82,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
           {/* Host Link */}
-          <Link to="/host-dashboard">
+          <Link to="/add-listing">
             <Button variant="ghost" className="text-sm font-medium">
               Become a host
             </Button>

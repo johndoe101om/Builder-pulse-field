@@ -215,9 +215,11 @@ const HostDashboard = () => {
                 Manage your properties and bookings
               </p>
             </div>
-            <Button>
-              <PlusIcon className="h-4 w-4 mr-2" />
-              Add listing
+            <Button asChild>
+              <Link to="/add-listing">
+                <PlusIcon className="h-4 w-4 mr-2" />
+                Add listing
+              </Link>
             </Button>
           </div>
 
@@ -446,9 +448,11 @@ const HostDashboard = () => {
                     <p className="text-muted-foreground mb-4">
                       Start earning by listing your first property
                     </p>
-                    <Button>
-                      <PlusIcon className="h-4 w-4 mr-2" />
-                      Create listing
+                    <Button asChild>
+                      <Link to="/add-listing">
+                        <PlusIcon className="h-4 w-4 mr-2" />
+                        Create listing
+                      </Link>
                     </Button>
                   </div>
                 )}
