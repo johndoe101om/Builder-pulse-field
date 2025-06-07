@@ -70,7 +70,9 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
       >
         {/* Location */}
         <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
-          <Label className="text-xs font-semibold text-gray-800">Where</Label>
+          <Label className="text-xs font-semibold text-gray-800 mb-1 block">
+            Where
+          </Label>
           <div className="relative">
             <MapPinIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
@@ -78,14 +80,14 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
               placeholder="Search destinations"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="pl-10 border-0 shadow-none focus-visible:ring-0 bg-transparent"
+              className="pl-10 border-0 shadow-none focus-visible:ring-0 bg-transparent placeholder:text-gray-500"
             />
           </div>
         </div>
 
         {/* Check-in */}
         <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
-          <Label className="text-xs font-semibold text-gray-800">
+          <Label className="text-xs font-semibold text-gray-800 mb-1 block">
             Check in
           </Label>
           <Popover>
@@ -93,12 +95,14 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0",
-                  !checkIn && "text-muted-foreground",
+                  "w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0 hover:bg-transparent",
+                  !checkIn && "text-gray-500",
                 )}
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {checkIn ? format(checkIn, "MMM dd") : "Add dates"}
+                <CalendarIcon className="mr-2 h-4 w-4 text-gray-400" />
+                <span className="text-sm">
+                  {checkIn ? format(checkIn, "MMM dd, yyyy") : "Select date"}
+                </span>
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
@@ -115,7 +119,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
 
         {/* Check-out */}
         <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
-          <Label className="text-xs font-semibold text-gray-800">
+          <Label className="text-xs font-semibold text-gray-800 mb-1 block">
             Check out
           </Label>
           <Popover>
@@ -123,12 +127,14 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0",
-                  !checkOut && "text-muted-foreground",
+                  "w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0 hover:bg-transparent",
+                  !checkOut && "text-gray-500",
                 )}
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {checkOut ? format(checkOut, "MMM dd") : "Add dates"}
+                <CalendarIcon className="mr-2 h-4 w-4 text-gray-400" />
+                <span className="text-sm">
+                  {checkOut ? format(checkOut, "MMM dd, yyyy") : "Select date"}
+                </span>
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
@@ -148,17 +154,21 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
         {/* Guests */}
         <div className="relative flex items-end">
           <div className="flex-1">
-            <Label className="text-xs font-semibold text-gray-800">Who</Label>
+            <Label className="text-xs font-semibold text-gray-800 mb-1 block">
+              Who
+            </Label>
             <div className="flex items-center">
               <UsersIcon className="mr-2 h-4 w-4 text-gray-400" />
+              <span className="text-sm text-gray-700">
+                {guests} {guests === 1 ? "guest" : "guests"}
+              </span>
               <Input
                 type="number"
                 min="1"
                 max="16"
                 value={guests}
                 onChange={(e) => setGuests(parseInt(e.target.value) || 1)}
-                className="border-0 shadow-none focus-visible:ring-0 bg-transparent"
-                placeholder="Add guests"
+                className="absolute opacity-0 pointer-events-none"
               />
             </div>
           </div>
@@ -166,7 +176,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
             onClick={handleSearch}
             size={isHero ? "lg" : "sm"}
             className={cn(
-              "rounded-full flex-shrink-0",
+              "rounded-full flex-shrink-0 bg-primary hover:bg-primary/90",
               isHero ? "h-12 w-12 p-0" : "h-8 w-8 p-0",
             )}
           >
