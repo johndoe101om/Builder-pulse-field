@@ -26,6 +26,9 @@ import {
   SunIcon,
   WavesIcon,
   TreesIcon,
+  TrainIcon,
+  BusIcon,
+  CarIcon,
 } from "lucide-react";
 import { mockProperties } from "@/lib/mockData";
 
@@ -157,6 +160,26 @@ const Home = () => {
           </div>
           <div className="absolute top-60 right-60 animate-pulse">
             <SunIcon className="h-10 w-10 text-yellow-300/40" />
+          </div>
+
+          {/* Moving Transportation Vehicles */}
+          <div className="absolute top-32 left-10 animate-bounce delay-700">
+            <TrainIcon className="h-9 w-9 text-white/35 rotate-12" />
+          </div>
+          <div className="absolute bottom-40 right-20 animate-pulse delay-1500">
+            <BusIcon className="h-7 w-7 text-white/30 -rotate-6" />
+          </div>
+          <div className="absolute top-72 left-60 animate-bounce delay-300">
+            <CarIcon className="h-6 w-6 text-white/40 rotate-45" />
+          </div>
+          <div className="absolute bottom-60 left-20 animate-pulse delay-2500">
+            <TrainIcon className="h-8 w-8 text-white/25 -rotate-12" />
+          </div>
+          <div className="absolute top-36 right-80 animate-bounce delay-1800">
+            <BusIcon className="h-8 w-8 text-white/35 rotate-6" />
+          </div>
+          <div className="absolute bottom-20 right-40 animate-pulse delay-600">
+            <CarIcon className="h-7 w-7 text-white/30 -rotate-45" />
           </div>
 
           {/* Travel Route Lines */}
