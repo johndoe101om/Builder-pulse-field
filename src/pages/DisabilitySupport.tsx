@@ -381,7 +381,7 @@ const DisabilitySupport = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <BookIcon className="h-5 w-5 mr-2 text-blue-600" />
+                    <BookOpenIcon className="h-5 w-5 mr-2 text-blue-600" />
                     Travel Guides
                   </CardTitle>
                 </CardHeader>
@@ -501,7 +501,7 @@ const DisabilitySupport = () => {
               </Button>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              Accessibility Support: +91-800-ACCESS (222377) ��� Available 24/7
+              Accessibility Support: +91-800-ACCESS (222377) • Available 24/7
             </p>
           </div>
         </section>

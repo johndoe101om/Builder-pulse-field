@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   HomeIcon,
-  FacebookIcon,
+  Facebook,
   TwitterIcon,
   InstagramIcon,
   LinkedinIcon,
@@ -22,7 +22,7 @@ export const Footer = () => {
               Connect with unique stays and experiences around the world.
             </p>
             <div className="flex space-x-4">
-              <FacebookIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
               <TwitterIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
               <InstagramIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
               <LinkedinIcon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
