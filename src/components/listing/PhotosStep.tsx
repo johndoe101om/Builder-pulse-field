@@ -110,7 +110,7 @@ export const PhotosStep = ({ control, watch, setValue }: PhotosStepProps) => {
             `}
             onClick={() => document.getElementById("photo-upload")?.click()}
           >
-            <UploadIcon className="h-12 w-12 mx-auto text-gray-400 mb-4" />
+            <Upload className="h-12 w-12 mx-auto text-gray-400 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Upload Photos</h3>
             <p className="text-gray-600 mb-4">
               Drag and drop your photos here, or click to browse
