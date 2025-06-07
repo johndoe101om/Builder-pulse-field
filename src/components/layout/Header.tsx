@@ -70,7 +70,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
             className="hidden md:flex flex-1 max-w-md mx-8"
           >
             <div className="relative w-full">
-              <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search destinations..."
@@ -143,7 +143,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                   size="sm"
                   className="flex items-center space-x-2"
                 >
-                  <MenuIcon className="h-4 w-4" />
+                  <Menu className="h-4 w-4" />
                   <Avatar className="h-8 w-8">
                     <AvatarImage src={user.avatar} alt={user.firstName} />
                     <AvatarFallback>
@@ -162,7 +162,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                         to="/super-admin-dashboard"
                         className="flex items-center"
                       >
-                        <SettingsIcon className="mr-2 h-4 w-4" />
+                        <Settings className="mr-2 h-4 w-4" />
                         Super Admin Panel
                       </Link>
                     </DropdownMenuItem>
@@ -177,7 +177,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                   <>
                     <DropdownMenuItem asChild>
                       <Link to="/profile" className="flex items-center">
-                        <UserIcon className="mr-2 h-4 w-4" />
+                        <User className="mr-2 h-4 w-4" />
                         Profile
                       </Link>
                     </DropdownMenuItem>
@@ -217,7 +217,7 @@ export const Header = ({ onSearch }: HeaderProps) => {
                   Settings
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogout}>
-                  <LogOutIcon className="mr-2 h-4 w-4" />
+                  <LogOut className="mr-2 h-4 w-4" />
                   Log out
                 </DropdownMenuItem>
               </DropdownMenuContent>
