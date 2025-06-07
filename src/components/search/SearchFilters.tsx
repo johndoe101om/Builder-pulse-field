@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { FilterIcon, XIcon } from "lucide-react";
+import { Filter, X } from "lucide-react";
 import { SearchFilters as SearchFiltersType } from "@/lib/types";
 import { PROPERTY_TYPES, AMENITIES, PRICE_RANGES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -58,7 +58,7 @@ export const SearchFilters = ({
         onClick={onToggle}
         className="flex items-center gap-2"
       >
-        <FilterIcon className="h-4 w-4" />
+        <Filter className="mr-2 h-4 w-4" />
         Filters
         {activeFilterCount > 0 && (
           <Badge variant="secondary" className="ml-1">
@@ -74,7 +74,7 @@ export const SearchFilters = ({
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-lg">Filters</CardTitle>
         <Button variant="ghost" size="sm" onClick={onToggle}>
-          <XIcon className="h-4 w-4" />
+          <X className="h-4 w-4" />
         </Button>
       </CardHeader>
 

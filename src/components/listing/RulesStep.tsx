@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { PlusIcon, XIcon, ShieldIcon } from "lucide-react";
+import { Plus, X, Shield } from "lucide-react";
 import { ListingFormData } from "@/lib/types";
 import { useState } from "react";
 
@@ -151,7 +151,7 @@ export const RulesStep = ({ control, watch, setValue }: RulesStepProps) => {
                       onClick={() => removeRule(rule)}
                       className="text-red-600 hover:text-red-700 hover:bg-red-50"
                     >
-                      <XIcon className="h-4 w-4" />
+                      <X className="h-4 w-4" />
                     </Button>
                   </div>
                 ))}
