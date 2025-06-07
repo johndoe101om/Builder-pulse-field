@@ -60,10 +60,10 @@ export const mockProperties: Property[] = [
       longitude: -74.006,
     },
     pricing: {
-      basePrice: 250,
-      cleaningFee: 50,
-      serviceFee: 35,
-      currency: "USD",
+      basePrice: 20000,
+      cleaningFee: 4000,
+      serviceFee: 2800,
+      currency: "INR",
     },
     capacity: {
       guests: 4,
@@ -114,10 +114,10 @@ export const mockProperties: Property[] = [
       longitude: -118.4912,
     },
     pricing: {
-      basePrice: 180,
-      cleaningFee: 40,
-      serviceFee: 28,
-      currency: "USD",
+      basePrice: 14400,
+      cleaningFee: 3200,
+      serviceFee: 2240,
+      currency: "INR",
     },
     capacity: {
       guests: 6,
@@ -169,10 +169,10 @@ export const mockProperties: Property[] = [
       longitude: -106.8175,
     },
     pricing: {
-      basePrice: 320,
-      cleaningFee: 60,
-      serviceFee: 45,
-      currency: "USD",
+      basePrice: 25600,
+      cleaningFee: 4800,
+      serviceFee: 3600,
+      currency: "INR",
     },
     capacity: {
       guests: 8,
