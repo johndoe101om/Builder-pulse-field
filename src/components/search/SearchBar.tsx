@@ -9,7 +9,14 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import { CalendarIcon, MapPinIcon, UsersIcon, SearchIcon } from "lucide-react";
+import {
+  CalendarIcon,
+  MapPinIcon,
+  UsersIcon,
+  SearchIcon,
+  MinusIcon,
+  PlusIcon,
+} from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
@@ -53,6 +60,14 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
     }
   };
 
+  const incrementGuests = () => {
+    if (guests < 16) setGuests(guests + 1);
+  };
+
+  const decrementGuests = () => {
+    if (guests > 1) setGuests(guests - 1);
+  };
+
   const isHero = variant === "hero";
 
   return (
@@ -69,7 +84,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
         )}
       >
         {/* Location */}
-        <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
+        <div className={cn("relative p-3", isHero && "md:border-r md:pr-4")}>
           <Label className="text-xs font-semibold text-gray-800 mb-1 block">
             Where
           </Label>
@@ -80,13 +95,13 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
               placeholder="Search destinations"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="pl-10 border-0 shadow-none focus-visible:ring-0 bg-transparent placeholder:text-gray-500"
+              className="pl-10 border-0 shadow-none focus-visible:ring-0 bg-transparent placeholder:text-gray-500 text-sm"
             />
           </div>
         </div>
 
         {/* Check-in */}
-        <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
+        <div className={cn("relative p-3", isHero && "md:border-r md:pr-4")}>
           <Label className="text-xs font-semibold text-gray-800 mb-1 block">
             Check in
           </Label>
@@ -118,7 +133,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
         </div>
 
         {/* Check-out */}
-        <div className={cn("relative", isHero && "md:border-r md:pr-4")}>
+        <div className={cn("relative p-3", isHero && "md:border-r md:pr-4")}>
           <Label className="text-xs font-semibold text-gray-800 mb-1 block">
             Check out
           </Label>
@@ -152,31 +167,65 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
         </div>
 
         {/* Guests */}
-        <div className="relative flex items-end">
+        <div className="relative flex items-center p-3">
           <div className="flex-1">
             <Label className="text-xs font-semibold text-gray-800 mb-1 block">
               Who
             </Label>
-            <div className="flex items-center">
-              <UsersIcon className="mr-2 h-4 w-4 text-gray-400" />
-              <span className="text-sm text-gray-700">
-                {guests} {guests === 1 ? "guest" : "guests"}
-              </span>
-              <Input
-                type="number"
-                min="1"
-                max="16"
-                value={guests}
-                onChange={(e) => setGuests(parseInt(e.target.value) || 1)}
-                className="absolute opacity-0 pointer-events-none"
-              />
-            </div>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0 hover:bg-transparent"
+                >
+                  <UsersIcon className="mr-2 h-4 w-4 text-gray-400" />
+                  <span className="text-sm text-gray-700">
+                    {guests} {guests === 1 ? "guest" : "guests"}
+                  </span>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-80 p-4" align="start">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium">Guests</div>
+                      <div className="text-sm text-gray-500">
+                        Ages 13 or above
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="h-8 w-8 p-0 rounded-full"
+                        onClick={decrementGuests}
+                        disabled={guests <= 1}
+                      >
+                        <MinusIcon className="h-4 w-4" />
+                      </Button>
+                      <span className="font-medium w-8 text-center">
+                        {guests}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="h-8 w-8 p-0 rounded-full"
+                        onClick={incrementGuests}
+                        disabled={guests >= 16}
+                      >
+                        <PlusIcon className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
           <Button
             onClick={handleSearch}
             size={isHero ? "lg" : "sm"}
             className={cn(
-              "rounded-full flex-shrink-0 bg-primary hover:bg-primary/90",
+              "rounded-full flex-shrink-0 bg-primary hover:bg-primary/90 ml-2",
               isHero ? "h-12 w-12 p-0" : "h-8 w-8 p-0",
             )}
           >
