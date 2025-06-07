@@ -284,7 +284,7 @@ const AddListing = () => {
                       `}
                       >
                         {isCompleted ? (
-                          <CheckIcon className="h-4 w-4" />
+                          <Check className="h-4 w-4" />
                         ) : (
                           <IconComponent className="h-4 w-4" />
                         )}
@@ -321,7 +321,7 @@ const AddListing = () => {
                     onClick={prevStep}
                     disabled={currentStep === 0}
                   >
-                    <ChevronLeftIcon className="h-4 w-4 mr-2" />
+                    <ChevronLeft className="h-4 w-4 mr-2" />
                     Previous
                   </Button>
 
@@ -335,13 +335,13 @@ const AddListing = () => {
                       size="lg"
                       className="bg-green-600 hover:bg-green-700"
                     >
-                      <CheckIcon className="h-4 w-4 mr-2" />
+                      <Check className="h-4 w-4 mr-2" />
                       Publish Listing
                     </Button>
                   ) : (
                     <Button type="button" onClick={nextStep}>
                       Next
-                      <ChevronRightIcon className="h-4 w-4 ml-2" />
+                      <ChevronRight className="h-4 w-4 ml-2" />
                     </Button>
                   )}
                 </div>
