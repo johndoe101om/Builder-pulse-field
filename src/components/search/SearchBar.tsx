@@ -202,7 +202,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
                         onClick={decrementGuests}
                         disabled={guests <= 1}
                       >
-                        <MinusIcon className="h-4 w-4" />
+                        <Minus className="h-4 w-4" />
                       </Button>
                       <span className="font-medium w-8 text-center">
                         {guests}
