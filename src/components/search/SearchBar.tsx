@@ -13,7 +13,7 @@ import {
   Calendar as CalendarIcon,
   MapPin,
   Search,
-  User,
+  Users,
   CalendarDays,
 } from "lucide-react";
 import { format } from "date-fns";
