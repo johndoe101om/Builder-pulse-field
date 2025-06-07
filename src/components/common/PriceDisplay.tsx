@@ -26,11 +26,16 @@ export const PriceDisplay = ({
     lg: "text-base",
   };
 
+  // Format numbers in Indian style (e.g., 1,00,000 instead of 100,000)
+  const formatIndianNumber = (num: number) => {
+    return num.toLocaleString("en-IN");
+  };
+
   return (
     <div className={cn("flex items-baseline", className)}>
       <span className={cn("font-semibold text-gray-900", sizeClasses[size])}>
         {CURRENCY_SYMBOL}
-        {price.toLocaleString()}
+        {formatIndianNumber(price)}
       </span>
       {period && (
         <span
