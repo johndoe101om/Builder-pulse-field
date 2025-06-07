@@ -15,16 +15,16 @@ import { PhotosStep } from "@/components/listing/PhotosStep";
 import { RulesStep } from "@/components/listing/RulesStep";
 import { PaymentStep } from "@/components/listing/PaymentStep";
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CheckIcon,
-  HomeIcon,
-  MapPinIcon,
-  StarIcon,
+  ChevronLeft,
+  ChevronRight,
+  Check,
+  Home as HomeIcon,
+  MapPin,
+  Star,
   DollarSign,
   Image,
-  ShieldIcon,
-  CreditCardIcon,
+  Shield,
+  CreditCard,
 } from "lucide-react";
 import { ListingFormData } from "@/lib/types";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
