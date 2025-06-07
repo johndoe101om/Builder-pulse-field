@@ -730,7 +730,7 @@ const Home = () => {
           <Mountain className="absolute bottom-40 left-40 h-12 w-12 text-white/10" />
           <div className="absolute top-20 right-20 flex space-x-6">
             <Compass className="h-12 w-12 text-yellow-300" />
-            <WavesIcon className="h-12 w-12 text-blue-300" />
+            <Waves className="h-12 w-12 text-blue-300" />
             <Camera className="h-12 w-12 text-pink-300" />
           </div>
 
