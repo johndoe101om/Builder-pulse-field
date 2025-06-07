@@ -21,6 +21,22 @@ import Signup from "./pages/Signup";
 import SuperAdminLogin from "./pages/SuperAdminLogin";
 import NotFound from "./pages/NotFound";
 
+// Support & Help Pages
+import HelpCenter from "./pages/HelpCenter";
+import SafetyInformation from "./pages/SafetyInformation";
+import CancellationOptions from "./pages/CancellationOptions";
+import DisabilitySupport from "./pages/DisabilitySupport";
+import ContactUs from "./pages/ContactUs";
+
+// Host Resource Pages
+import HostResources from "./pages/HostResources";
+import CommunityForum from "./pages/CommunityForum";
+import ResponsibleHosting from "./pages/ResponsibleHosting";
+import HostGuarantee from "./pages/HostGuarantee";
+
+// Company Pages
+import About from "./pages/About";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -36,6 +52,8 @@ const App = () => (
               <Route path="/search" element={<Search />} />
               <Route path="/property/:id" element={<PropertyDetail />} />
               <Route path="/wishlist" element={<Wishlist />} />
+
+              {/* Protected Routes */}
               <Route
                 path="/booking/:id"
                 element={
@@ -84,14 +102,60 @@ const App = () => (
                   </ProtectedRoute>
                 }
               />
+
+              {/* Authentication Routes */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+
               {/* Super Admin Route - Separate and Hidden */}
               <Route path="/sa-login" element={<SuperAdminLogin />} />
               <Route
                 path="/super-admin-dashboard"
                 element={<AdminDashboard />}
               />
+
+              {/* Support & Help Routes */}
+              <Route path="/help" element={<HelpCenter />} />
+              <Route path="/safety" element={<SafetyInformation />} />
+              <Route path="/cancellation" element={<CancellationOptions />} />
+              <Route
+                path="/disability-support"
+                element={<DisabilitySupport />}
+              />
+              <Route path="/contact" element={<ContactUs />} />
+
+              {/* Host Resource Routes */}
+              <Route path="/host-resources" element={<HostResources />} />
+              <Route path="/community-forum" element={<CommunityForum />} />
+              <Route
+                path="/responsible-hosting"
+                element={<ResponsibleHosting />}
+              />
+              <Route path="/host-guarantee" element={<HostGuarantee />} />
+
+              {/* Company Routes */}
+              <Route path="/about" element={<About />} />
+              <Route
+                path="/careers"
+                element={<div>Careers page coming soon...</div>}
+              />
+              <Route
+                path="/press"
+                element={<div>Press page coming soon...</div>}
+              />
+              <Route
+                path="/investors"
+                element={<div>Investors page coming soon...</div>}
+              />
+              <Route
+                path="/terms"
+                element={<div>Terms of Service page coming soon...</div>}
+              />
+              <Route
+                path="/privacy"
+                element={<div>Privacy Policy page coming soon...</div>}
+              />
+
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -101,4 +165,5 @@ const App = () => (
     </AuthProvider>
   </QueryClientProvider>
 );
+
 export default App;
