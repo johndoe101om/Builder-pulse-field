@@ -81,21 +81,25 @@ export const Header = ({ onSearch }: HeaderProps) => {
         {/* Navigation */}
         <nav className="flex items-center space-x-4">
           {/* Host Link - only show for non-super-admin users */}
-          {(!user || user.role !== 'superadmin') && (
+          {(!user || user.role !== "superadmin") && (
             <Button
               variant="ghost"
               className="text-sm font-medium"
               onClick={() => {
                 if (user) {
-                  navigate('/add-listing');
+                  navigate("/add-listing");
                 } else {
-                  navigate('/signup', { state: { from: { pathname: '/add-listing' }, hostingIntent: true } });
+                  navigate("/signup", {
+                    state: {
+                      from: { pathname: "/add-listing" },
+                      hostingIntent: true,
+                    },
+                  });
                 }
               }}
             >
               Become a host
             </Button>
-          )}
           )}
 
           {/* User Menu */}

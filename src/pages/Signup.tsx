@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -27,19 +27,19 @@ import { useAuth } from "@/contexts/AuthContext";
 const Signup = () => {
   const location = useLocation();
   const isHostingIntent = location.state?.hostingIntent;
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    role: (isHostingIntent ? 'host' : 'guest') as 'guest' | 'host',
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: (isHostingIntent ? "host" : "guest") as "guest" | "host",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const { signup, isLoading } = useAuth();
   const navigate = useNavigate();
 
@@ -79,8 +79,7 @@ const Signup = () => {
     if (success) {
       navigate(from, { replace: true });
     } else {
-      setError('Email already exists or signup failed');
-    }
+      setError("Email already exists or signup failed");
     }
   };
 
@@ -107,24 +106,26 @@ const Signup = () => {
             <span className="text-3xl font-black text-white">StayConnect</span>
           </Link>
           <h1 className="text-2xl font-bold text-white mb-2">
-            {isHostingIntent ? 'Start Your Hosting Journey!' : 'Join the Adventure!'}
+            {isHostingIntent
+              ? "Start Your Hosting Journey!"
+              : "Join the Adventure!"}
           </h1>
           <p className="text-white/80">
             {isHostingIntent
-              ? 'Create your account to list your property and start earning'
-              : 'Create your account and start exploring'
-            }
+              ? "Create your account to list your property and start earning"
+              : "Create your account and start exploring"}
           </p>
         </div>
 
         <Card className="backdrop-blur-lg bg-white/95 border-white/20 shadow-2xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Create Account</CardTitle>
+            <CardTitle className="text-2xl text-center">
+              Create Account
+            </CardTitle>
             <CardDescription className="text-center">
               {isHostingIntent
-                ? 'Set up your hosting account to start earning'
-                : 'Choose your adventure type and get started'
-              }
+                ? "Set up your hosting account to start earning"
+                : "Choose your adventure type and get started"}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -135,49 +136,67 @@ const Signup = () => {
               </Alert>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Account Type */}
-              <div className="space-y-3">
-                <Label>I want to...</Label>
-                <RadioGroup
-                  value={formData.role}
-                  onValueChange={(value) => handleInputChange("role", value)}
-                  className="grid grid-cols-2 gap-4"
-                >
-                  <div className="flex items-center space-x-2 border rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
-                    <RadioGroupItem value="guest" id="guest" />
-                    <Label
-                      htmlFor="guest"
-                      className="flex items-center gap-2 cursor-pointer flex-1"
-                    >
-                      <UserIcon className="h-4 w-4 text-blue-600" />
-                      <div>
-                        <div className="font-medium">Explore & Travel</div>
-                        <div className="text-xs text-gray-500">
-                          Find amazing places to stay
-                        </div>
-                      </div>
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
-                    <RadioGroupItem value="host" id="host" />
-                    <Label
-                      htmlFor="host"
-                      className="flex items-center gap-2 cursor-pointer flex-1"
-                    >
-                      <BuildingIcon className="h-4 w-4 text-green-600" />
-                      <div>
-                        <div className="font-medium">Host & Earn</div>
-                        <div className="text-xs text-gray-500">
-                          Share your space
-                        </div>
-                      </div>
-                    </Label>
-                  </div>
-                </RadioGroup>
+            {isHostingIntent && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div className="flex items-center gap-2 text-green-800 mb-2">
+                  <BuildingIcon className="h-4 w-4" />
+                  <span className="font-medium">Hosting Account</span>
+                </div>
+                <p className="text-sm text-green-700">
+                  You're signing up to become a host! You'll be able to list
+                  your property and start earning.
+                </p>
               </div>
+            )}
 
-              <Separator />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Account Type - only show if not hosting intent */}
+              {!isHostingIntent && (
+                <>
+                  <div className="space-y-3">
+                    <Label>I want to...</Label>
+                    <RadioGroup
+                      value={formData.role}
+                      onValueChange={(value) =>
+                        handleInputChange("role", value)
+                      }
+                      className="grid grid-cols-2 gap-4"
+                    >
+                      <div className="flex items-center space-x-2 border rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
+                        <RadioGroupItem value="guest" id="guest" />
+                        <Label
+                          htmlFor="guest"
+                          className="flex items-center gap-2 cursor-pointer flex-1"
+                        >
+                          <UserIcon className="h-4 w-4 text-blue-600" />
+                          <div>
+                            <div className="font-medium">Explore & Travel</div>
+                            <div className="text-xs text-gray-500">
+                              Find amazing places to stay
+                            </div>
+                          </div>
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2 border rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
+                        <RadioGroupItem value="host" id="host" />
+                        <Label
+                          htmlFor="host"
+                          className="flex items-center gap-2 cursor-pointer flex-1"
+                        >
+                          <BuildingIcon className="h-4 w-4 text-green-600" />
+                          <div>
+                            <div className="font-medium">Host & Earn</div>
+                            <div className="text-xs text-gray-500">
+                              Share your space
+                            </div>
+                          </div>
+                        </Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                  <Separator />
+                </>
+              )}
 
               {/* Name Fields */}
               <div className="grid grid-cols-2 gap-4">
@@ -290,6 +309,7 @@ const Signup = () => {
                 Already have an account?{" "}
                 <Link
                   to="/login"
+                  state={location.state}
                   className="text-primary hover:underline font-medium"
                 >
                   Sign in
