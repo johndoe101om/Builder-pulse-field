@@ -170,7 +170,7 @@ export const PhotosStep = ({ control, watch, setValue }: PhotosStepProps) => {
                 {watchedImages.map((image, index) => (
                   <div
                     key={index}
-                    className="relative group aspect-[4/3] rounded-lg overflow-hidden border"
+                    className="relative group aspect-[3/2] rounded-lg overflow-hidden border"
                   >
                     <img
                       src={image}
