@@ -214,7 +214,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
                         onClick={incrementGuests}
                         disabled={guests >= 16}
                       >
-                        <PlusIcon className="h-4 w-4" />
+                        <Plus className="h-4 w-4" />
                       </Button>
                     </div>
                   </div>
