@@ -74,7 +74,7 @@ const PropertyDetail = () => {
                   Share
                 </Button>
                 <Button variant="ghost" size="sm">
-                  <HeartIcon className="h-4 w-4 mr-2" />
+                  <Heart className="h-4 w-4 mr-2" />
                   Save
                 </Button>
               </div>
@@ -87,7 +87,7 @@ const PropertyDetail = () => {
                 size="sm"
               />
               <div className="flex items-center text-muted-foreground">
-                <MapPinIcon className="h-4 w-4 mr-1" />
+                <MapPin className="h-4 w-4 mr-1" />
                 <span>
                   {property.location.city}, {property.location.state},{" "}
                   {property.location.country}
@@ -193,7 +193,7 @@ const PropertyDetail = () => {
               {propertyReviews.length > 0 && (
                 <div>
                   <div className="flex items-center gap-2 mb-6">
-                    <StarIcon className="h-6 w-6 fill-current" />
+                    <Star className="h-6 w-6 fill-current" />
                     <h3 className="text-lg font-semibold">
                       {property.rating} · {property.reviewCount} reviews
                     </h3>
@@ -268,7 +268,7 @@ const PropertyDetail = () => {
                 <CardContent>
                   <div className="flex items-center gap-6 mb-4">
                     <div className="flex items-center gap-2">
-                      <StarIcon className="h-4 w-4 fill-current" />
+                      <Star className="h-4 w-4 fill-current" />
                       <span className="font-semibold">
                         {property.host.rating}
                       </span>
