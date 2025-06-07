@@ -324,27 +324,25 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
-                <div className="grid grid-cols-2 gap-4">
-                  {["🎭 Culture", "🍕 Food", "🎨 Art", "🌊 Adventure"].map(
-                    (activity, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition-colors"
-                      >
-                        <div className="text-2xl mb-2">
-                          {activity.split(" ")[0]}
-                        </div>
-                        <div className="text-sm font-medium">
-                          {activity.split(" ")[1]}
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredProperties.map((property, index) => (
+              <div
+                key={property.id}
+                className={`transform transition-all duration-700 hover:scale-105 ${
+                  index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'
+                }`}
+              >
+                <PropertyCard property={property} className="border-0 shadow-lg hover:shadow-2xl" />
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/search">
+                View all properties
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
