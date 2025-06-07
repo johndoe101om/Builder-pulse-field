@@ -10,7 +10,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { CalendarIcon, UsersIcon } from "lucide-react";
+import { Calendar as CalendarIcon, Users } from "lucide-react";
 import { format } from "date-fns";
 import { Property } from "@/lib/types";
 import { CURRENCY_SYMBOL, PLATFORM_FEE_PERCENTAGE } from "@/lib/constants";
