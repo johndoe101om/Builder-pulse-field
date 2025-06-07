@@ -19,7 +19,7 @@ import {
   LightbulbIcon,
   PlayCircleIcon,
   DownloadIcon,
-  ExternalLinkIcon,
+  ExternalLink,
 } from "lucide-react";
 
 const HostResources = () => {
@@ -364,7 +364,7 @@ const HostResources = () => {
                             >
                               {resource.type}
                             </Badge>
-                            <ExternalLinkIcon className="h-4 w-4 text-gray-400 group-hover:text-green-600 transition-colors" />
+                            <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-green-600 transition-colors" />
                           </div>
                         </div>
                       ))}
