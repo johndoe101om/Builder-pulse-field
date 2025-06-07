@@ -18,14 +18,13 @@ import {
   ArrowRightIcon,
   PlayCircleIcon,
   ChevronDownIcon,
-  CompassIcon,
-  Plane,
-  MountainIcon,
-  CameraIcon,
-  NavigationIcon,
-  SunIcon,
-  WavesIcon,
-  TreesIcon,
+  Compass,
+  Mountain,
+  Camera,
+  Navigation,
+  Sun,
+  Waves,
+  Trees,
   Train,
   Bus,
   Car,
@@ -153,13 +152,13 @@ const Home = () => {
             <Plane className="h-8 w-8 text-white/30 rotate-45" />
           </div>
           <div className="absolute top-40 right-32 animate-pulse delay-2000">
-            <CompassIcon className="h-6 w-6 text-white/40" />
+            <Compass className="h-6 w-6 text-white/40" />
           </div>
           <div className="absolute bottom-32 left-40 animate-bounce delay-500">
-            <NavigationIcon className="h-7 w-7 text-white/35 rotate-12" />
+            <Navigation className="h-7 w-7 text-white/35 rotate-12" />
           </div>
           <div className="absolute top-60 right-60 animate-pulse">
-            <SunIcon className="h-10 w-10 text-yellow-300/40" />
+            <Sun className="h-10 w-10 text-yellow-300/40" />
           </div>
 
           {/* Moving Transportation Vehicles */}
