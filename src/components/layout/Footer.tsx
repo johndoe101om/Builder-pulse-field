@@ -175,23 +175,6 @@ export const Footer = () => {
 
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; 2024 StayConnect. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/terms" className="hover:text-primary transition-colors">
-              Terms
-            </Link>
-            <Link
-              to="/privacy"
-              className="hover:text-primary transition-colors"
-            >
-              Privacy
-            </Link>
-            <Link
-              to="/sitemap"
-              className="hover:text-primary transition-colors"
-            >
-              Sitemap
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
