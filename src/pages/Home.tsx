@@ -95,7 +95,7 @@ const Home = () => {
     {
       number: "195",
       label: "Countries",
-      icon: GlobeIcon,
+      icon: Globe,
       color: "from-blue-500 to-cyan-500",
     },
     {
