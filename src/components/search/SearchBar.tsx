@@ -177,7 +177,7 @@ export const SearchBar = ({ variant = "hero", onSearch }: SearchBarProps) => {
                   variant="ghost"
                   className="w-full justify-start text-left font-normal border-0 shadow-none h-auto p-0 hover:bg-transparent"
                 >
-                  <UsersIcon className="mr-2 h-4 w-4 text-gray-400" />
+                  <Users className="mr-2 h-4 w-4 text-gray-400" />
                   <span className="text-sm text-gray-700">
                     {guests} {guests === 1 ? "guest" : "guests"}
                   </span>
