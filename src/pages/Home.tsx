@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
 import AdvancedSearch from "@/components/search/AdvancedSearch";
 import AppDownload from "@/components/mobile/AppDownload";
@@ -145,8 +143,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
-      // <Header />
-
       {/* Hero Section - Travel-Inspired */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 text-white overflow-hidden">
         {/* Animated Travel Elements */}
@@ -743,8 +739,6 @@ const Home = () => {
           <AppDownload />
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
