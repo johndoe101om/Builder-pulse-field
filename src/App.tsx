@@ -116,6 +116,31 @@ const App = () => (
                   </ProtectedRoute>
                 }
               />
+              {/* Route aliases for common settings page variations */}
+              <Route
+                path="/setting"
+                element={
+                  <ProtectedRoute>
+                    <Settings />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/account"
+                element={
+                  <ProtectedRoute>
+                    <Settings />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/preferences"
+                element={
+                  <ProtectedRoute>
+                    <Settings />
+                  </ProtectedRoute>
+                }
+              />
 
               {/* Authentication Routes */}
               <Route path="/login" element={<Login />} />
