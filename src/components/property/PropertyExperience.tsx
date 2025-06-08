@@ -16,7 +16,7 @@ import {
   RotateCw,
   ZoomIn,
   ZoomOut,
-  FullScreen,
+  Maximize,
   Play,
   Pause,
   Volume2,
@@ -425,7 +425,7 @@ const PropertyExperience = ({
               size="sm"
               onClick={() => setIsFullscreen(!isFullscreen)}
             >
-              <FullScreen className="h-4 w-4" />
+              <Maximize className="h-4 w-4" />
             </Button>
             <Button
               variant="secondary"
@@ -805,7 +805,7 @@ const PropertyExperience = ({
                               <Share className="h-4 w-4" />
                             </Button>
                             <Button variant="secondary" size="sm">
-                              <FullScreen className="h-4 w-4" />
+                              <Maximize className="h-4 w-4" />
                             </Button>
                           </div>
                           <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
