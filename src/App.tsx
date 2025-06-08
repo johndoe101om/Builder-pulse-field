@@ -11,7 +11,7 @@ import { Settings } from "./pages/Settings";
 import { AddListing } from "./pages/AddListing";
 import { SocialHub } from "./pages/SocialHub";
 import { MapSearch } from "./components/search/MapSearch";
-import { ProtectedRoute } from "./components/auth/ProtectedRoute";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
