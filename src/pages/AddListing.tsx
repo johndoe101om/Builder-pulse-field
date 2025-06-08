@@ -379,8 +379,6 @@ const AddListing = () => {
           )}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
