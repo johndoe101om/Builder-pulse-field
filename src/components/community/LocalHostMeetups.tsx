@@ -14,7 +14,7 @@ import {
   Coffee,
   Utensils,
   Camera,
-  Hiking,
+  Mountain,
   Music,
   Car,
   Plus,
