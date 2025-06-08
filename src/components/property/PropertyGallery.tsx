@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { ChevronLeftIcon, ChevronRightIcon, GridIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, Grid3X3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PropertyGalleryProps {

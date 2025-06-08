@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { DollarSign, InfoIcon } from "lucide-react";
+import { DollarSign, Info } from "lucide-react";
 import { CURRENCY_SYMBOL } from "@/lib/constants";
 import { ListingFormData } from "@/lib/types";
 

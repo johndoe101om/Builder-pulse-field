@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { SearchIcon, FilterIcon, DownloadIcon } from "lucide-react";
+import { Search, Filter, Download } from "lucide-react";
 import { Booking } from "@/lib/types";
 import { CURRENCY_SYMBOL, BOOKING_STATUS_LABELS } from "@/lib/constants";
 import { format } from "date-fns";
