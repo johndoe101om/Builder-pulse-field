@@ -292,10 +292,10 @@ export const LocalHostMeetups: React.FC = () => {
     { value: "all", label: "All", icon: Globe },
     { value: "food", label: "Food & Drink", icon: Utensils },
     { value: "culture", label: "Culture", icon: Camera },
-    { value: "adventure", label: "Adventure", icon: Hiking },
+    { value: "adventure", label: "Adventure", icon: Mountain },
     { value: "nightlife", label: "Nightlife", icon: Music },
     { value: "photography", label: "Photography", icon: Camera },
-    { value: "nature", label: "Nature", icon: Hiking },
+    { value: "nature", label: "Nature", icon: Mountain },
   ];
 
   const getCategoryIcon = (category: string) => {
