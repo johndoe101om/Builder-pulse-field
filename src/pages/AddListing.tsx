@@ -389,4 +389,4 @@ const AddListing = () => {
   );
 };
 
-export default AddListing;
+export { AddListing };
