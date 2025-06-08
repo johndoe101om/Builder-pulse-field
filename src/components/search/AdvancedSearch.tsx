@@ -190,7 +190,7 @@ const AdvancedSearch = () => {
     { id: "ac", label: "Air Conditioning", icon: AirVent },
     { id: "washer", label: "Washer", icon: WashingMachine },
     { id: "coffee", label: "Coffee Maker", icon: Coffee },
-    { id: "games", label: "Games", icon: Gamepad2 },
+    { id: "games", label: "Games", icon: Gamepad },
     { id: "gym", label: "Gym", icon: Dumbbell },
     { id: "pool", label: "Pool", icon: Waves },
   ];
