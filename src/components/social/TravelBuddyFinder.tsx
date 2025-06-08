@@ -21,7 +21,7 @@ import {
   Music,
   Coffee,
   Utensils,
-  Palmtree,
+  TreePalm,
   Gamepad2,
   BookOpen,
   Plane,
