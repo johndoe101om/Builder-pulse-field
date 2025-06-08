@@ -402,3 +402,5 @@ export const SocialHub: React.FC = () => {
     </div>
   );
 };
+
+export { SocialHub };
