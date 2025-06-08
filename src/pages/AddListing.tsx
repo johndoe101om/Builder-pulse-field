@@ -215,7 +215,6 @@ const AddListing = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-
       <main className="flex-1 bg-gray-50">
         <div className="container py-8">
           {/* Header */}
@@ -381,6 +380,7 @@ const AddListing = () => {
         </div>
       </main>
 
+      <Footer />
     </div>
   );
 };
