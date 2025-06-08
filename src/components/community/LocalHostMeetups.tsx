@@ -302,9 +302,9 @@ export const LocalHostMeetups: React.FC = () => {
     const icons = {
       food: Utensils,
       culture: Globe,
-      adventure: Hiking,
+      adventure: Mountain,
       nightlife: Music,
-      nature: Hiking,
+      nature: Mountain,
       shopping: Car,
       photography: Camera,
     };
