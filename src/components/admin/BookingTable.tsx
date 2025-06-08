@@ -111,7 +111,7 @@ export const BookingTable = ({ bookings, title }: BookingTableProps) => {
         <div className="flex items-center justify-between">
           <CardTitle>{title}</CardTitle>
           <Button onClick={handleExport} variant="outline" size="sm">
-            <DownloadIcon className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4 mr-2" />
             Export
           </Button>
         </div>
@@ -119,7 +119,7 @@ export const BookingTable = ({ bookings, title }: BookingTableProps) => {
         {/* Filters */}
         <div className="flex gap-4 mt-4">
           <div className="relative flex-1 max-w-sm">
-            <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               placeholder="Search bookings..."
               value={searchTerm}
