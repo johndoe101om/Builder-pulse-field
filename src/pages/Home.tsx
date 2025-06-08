@@ -4,6 +4,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
+import AdvancedSearch from "@/components/search/AdvancedSearch";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -353,7 +354,7 @@ const Home = () => {
                   </p>
                 </div>
 
-                <SearchBar />
+                <AdvancedSearch />
 
                 <div className="mt-8">
                   <p className="text-white/80 text-lg font-medium mb-6 text-center">
