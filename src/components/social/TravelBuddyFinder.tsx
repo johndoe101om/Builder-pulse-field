@@ -181,7 +181,7 @@ export const TravelBuddyFinder: React.FC = () => {
       yoga: Users,
       meditation: Users,
       wellness: Heart,
-      gaming: Gamepad2,
+      gaming: Gamepad,
       reading: BookOpen,
     };
     const IconComponent = icons[interest as keyof typeof icons] || Coffee;
