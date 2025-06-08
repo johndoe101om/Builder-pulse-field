@@ -223,13 +223,37 @@ export const Header = ({ onSearch }: HeaderProps) => {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <div className="flex items-center space-x-2">
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/login">Log in</Link>
-              </Button>
-              <Button size="sm" asChild>
-                <Link to="/signup">Sign up</Link>
-              </Button>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="/search"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Search
+              </Link>
+              <Link
+                to="/map"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Map
+              </Link>
+              <Link
+                to="/social"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Community
+              </Link>
+              <button className="text-gray-700 hover:text-blue-600 transition-colors">
+                Experiences
+              </button>
+              <button className="text-gray-700 hover:text-blue-600 transition-colors">
+                Help
+              </button>
             </div>
           )}
         </nav>
