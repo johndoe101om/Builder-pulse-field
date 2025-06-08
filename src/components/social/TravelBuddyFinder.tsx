@@ -182,7 +182,7 @@ export const TravelBuddyFinder: React.FC = () => {
       meditation: Users,
       wellness: Heart,
       gaming: Gamepad,
-      reading: BookOpen,
+      reading: Book,
     };
     const IconComponent = icons[interest as keyof typeof icons] || Coffee;
     return <IconComponent className="w-4 h-4" />;
