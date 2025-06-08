@@ -539,8 +539,6 @@ const HostDashboard = () => {
           </Tabs>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

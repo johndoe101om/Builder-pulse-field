@@ -296,8 +296,6 @@ const GuestDashboard = () => {
           </Card>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
