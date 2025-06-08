@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
 import AdvancedSearch from "@/components/search/AdvancedSearch";
+import AppDownload from "@/components/mobile/AppDownload";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
