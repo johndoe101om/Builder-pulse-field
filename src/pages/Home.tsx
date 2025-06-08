@@ -145,7 +145,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
-      <Header />
+      // <Header />
 
       {/* Hero Section - Travel-Inspired */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 text-white overflow-hidden">
