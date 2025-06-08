@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, Grid3X3 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Grid3x3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PropertyGalleryProps {
@@ -71,7 +71,7 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
           className="absolute bottom-4 right-4 bg-white hover:bg-gray-50"
           onClick={() => setIsDialogOpen(true)}
         >
-          <Grid3X3 className="mr-2 h-4 w-4" />
+          <Grid3x3 className="mr-2 h-4 w-4" />
           Show all photos
         </Button>
       </div>
