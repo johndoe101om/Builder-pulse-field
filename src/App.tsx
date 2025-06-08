@@ -16,6 +16,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AddListing from "./pages/AddListing";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import SuperAdminLogin from "./pages/SuperAdminLogin";
