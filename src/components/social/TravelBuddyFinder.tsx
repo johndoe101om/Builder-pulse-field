@@ -17,7 +17,7 @@ import {
   Shield,
   Globe,
   Camera,
-  Hiking,
+  Mountain,
   Music,
   Coffee,
   Utensils,
