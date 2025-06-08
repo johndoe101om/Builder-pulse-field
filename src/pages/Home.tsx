@@ -355,24 +355,123 @@ const Home = () => {
 
                 <SearchBar />
 
-                <div className="mt-6 text-center">
-                  <p className="text-white/70 text-sm mb-4">
-                    Popular destinations this week
+                <div className="mt-8">
+                  <p className="text-white/80 text-lg font-medium mb-6 text-center">
+                    ✨ Popular destinations this week
                   </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {["Goa", "Manali", "Udaipur", "Rishikesh"].map((dest) => (
-                      <Button
-                        key={dest}
-                        variant="outline"
-                        size="sm"
-                        className="border-white/40 text-white hover:bg-white/20 text-xs"
-                        asChild
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      {
+                        name: "Goa",
+                        subtitle: "Beach Paradise",
+                        image:
+                          "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400&h=300&fit=crop",
+                        properties: "2,340+ stays",
+                        price: "from ₹3,200",
+                        trending: true,
+                        emoji: "🏖️",
+                      },
+                      {
+                        name: "Manali",
+                        subtitle: "Mountain Escape",
+                        image:
+                          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+                        properties: "1,890+ stays",
+                        price: "from ₹2,800",
+                        trending: true,
+                        emoji: "🏔️",
+                      },
+                      {
+                        name: "Udaipur",
+                        subtitle: "City of Lakes",
+                        image:
+                          "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=300&fit=crop",
+                        properties: "1,567+ stays",
+                        price: "from ₹4,100",
+                        trending: false,
+                        emoji: "🏰",
+                      },
+                      {
+                        name: "Rishikesh",
+                        subtitle: "Yoga Capital",
+                        image:
+                          "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop",
+                        properties: "945+ stays",
+                        price: "from ₹2,500",
+                        trending: true,
+                        emoji: "🧘",
+                      },
+                    ].map((dest, index) => (
+                      <Link
+                        key={dest.name}
+                        to={`/search?location=${dest.name}`}
+                        className="group block"
                       >
-                        <Link to={`/search?location=${dest.split(" ")[1]}`}>
-                          {dest}
-                        </Link>
-                      </Button>
+                        <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:bg-white/15">
+                          {dest.trending && (
+                            <div className="absolute top-3 right-3 z-10">
+                              <div className="bg-gradient-to-r from-orange-400 to-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                                🔥 Hot
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="relative h-32 overflow-hidden">
+                            <img
+                              src={dest.image}
+                              alt={dest.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                            <div className="absolute bottom-2 left-3 text-white">
+                              <div className="text-lg font-bold flex items-center gap-1">
+                                {dest.emoji} {dest.name}
+                              </div>
+                              <div className="text-xs text-white/80">
+                                {dest.subtitle}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="p-3">
+                            <div className="flex justify-between items-center text-white">
+                              <div className="text-xs text-white/70">
+                                {dest.properties}
+                              </div>
+                              <div className="text-sm font-semibold">
+                                {dest.price}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
                     ))}
+                  </div>
+
+                  {/* Quick search suggestions */}
+                  <div className="mt-6 text-center">
+                    <p className="text-white/60 text-sm mb-3">
+                      Quick searches:
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {[
+                        "🏖️ Beaches",
+                        "🏔️ Mountains",
+                        "🏛️ Heritage",
+                        "🍃 Nature",
+                        "🏙️ Cities",
+                        "🧘 Wellness",
+                        "🍷 Wine Tours",
+                        "🏕️ Adventure",
+                      ].map((tag) => (
+                        <button
+                          key={tag}
+                          className="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white/80 text-xs transition-all hover:scale-105"
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
