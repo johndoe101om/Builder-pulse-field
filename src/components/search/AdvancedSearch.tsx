@@ -37,7 +37,7 @@ import {
   AirVent,
   WashingMachine,
   Coffee,
-  Gamepad2,
+  Gamepad,
   Dumbbell,
   Waves,
   TreePine,
