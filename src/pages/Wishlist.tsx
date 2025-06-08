@@ -33,15 +33,12 @@ const Wishlist = () => {
             </div>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-
       <main className="flex-1 bg-gray-50">
         <div className="container py-8">
           {/* Header */}
