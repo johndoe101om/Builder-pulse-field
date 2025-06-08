@@ -23,7 +23,7 @@ import {
   Utensils,
   TreePalm,
   Gamepad,
-  BookOpen,
+  Book,
   Plane,
   Car,
   Clock,
