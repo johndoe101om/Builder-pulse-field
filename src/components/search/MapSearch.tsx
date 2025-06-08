@@ -652,4 +652,4 @@ const MapSearch = () => {
   );
 };
 
-export default MapSearch;
+export { MapSearch };
