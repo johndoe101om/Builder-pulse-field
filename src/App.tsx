@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
@@ -15,11 +16,12 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-50 flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Routes>
+    <AuthProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-50 flex flex-col">
+          <Header />
+          <main className="flex-1">
+            <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/map" element={<MapSearch />} />
