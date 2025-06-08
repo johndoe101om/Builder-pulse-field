@@ -86,6 +86,22 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
+                <Route
+                  path="/guest-dashboard"
+                  element={
+                    <ProtectedRoute>
+                      <GuestDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/host-dashboard"
+                  element={
+                    <ProtectedRoute>
+                      <HostDashboard />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/social" element={<SocialHub />} />
                 <Route path="/community" element={<SocialHub />} />
                 <Route path="/connect" element={<SocialHub />} />
