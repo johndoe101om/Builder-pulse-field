@@ -18,10 +18,11 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <div className="min-h-screen bg-gray-50 flex flex-col">
-          <Header />
-          <main className="flex-1">
+      <WishlistProvider>
+        <Router>
+          <div className="min-h-screen bg-gray-50 flex flex-col">
+            <Header />
+            <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
