@@ -27,7 +27,6 @@ import {
   Percent,
   Tag,
   RefreshCw,
-  Sync,
   Globe,
   Smartphone,
   Laptop,
@@ -691,7 +690,7 @@ const AdvancedBooking = ({ propertyId }: { propertyId: string }) => {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Sync className="h-5 w-5" />
+          <RefreshCw className="h-5 w-5" />
           Calendar Synchronization
         </CardTitle>
       </CardHeader>
