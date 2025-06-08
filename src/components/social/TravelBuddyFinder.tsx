@@ -22,7 +22,7 @@ import {
   Coffee,
   Utensils,
   TreePalm,
-  Gamepad2,
+  Gamepad,
   BookOpen,
   Plane,
   Car,
