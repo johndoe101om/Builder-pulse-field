@@ -17,7 +17,7 @@ import {
   Upload,
   Mic,
   MicOff,
-  VideoIcon as Video,
+  Video,
   VideoOff,
   RotateCcw,
   Download,
