@@ -62,7 +62,6 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  Maximize,
   Grid3x3,
   Scan,
   Box,
