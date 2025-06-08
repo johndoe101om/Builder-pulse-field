@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +13,6 @@ const Wishlist = () => {
   if (!user) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 bg-gray-50 flex items-center justify-center">
           <div className="text-center max-w-md mx-auto p-8">
             <Heart className="h-16 w-16 text-gray-300 mx-auto mb-6" />
@@ -36,14 +33,12 @@ const Wishlist = () => {
             </div>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="flex-1 bg-gray-50">
         <div className="container py-8">
@@ -171,7 +166,6 @@ const Wishlist = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

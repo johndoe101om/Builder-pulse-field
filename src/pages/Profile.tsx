@@ -61,7 +61,6 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="flex-1 bg-gray-50">
         <div className="container py-8">
@@ -507,7 +506,6 @@ const Profile = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };
