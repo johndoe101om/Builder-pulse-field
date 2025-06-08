@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchFilters } from "@/components/search/SearchFilters";
 import { PropertyCard } from "@/components/property/PropertyCard";

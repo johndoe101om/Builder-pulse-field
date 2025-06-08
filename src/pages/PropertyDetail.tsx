@@ -1,6 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { PropertyGallery } from "@/components/property/PropertyGallery";
 import { BookingCard } from "@/components/booking/BookingCard";
 import PropertyExperience from "@/components/property/PropertyExperience";
