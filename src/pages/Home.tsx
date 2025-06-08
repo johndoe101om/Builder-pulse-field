@@ -737,6 +737,13 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Mobile App Download Section */}
+      <section className="py-16">
+        <div className="container">
+          <AppDownload />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
