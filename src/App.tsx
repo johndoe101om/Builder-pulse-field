@@ -23,75 +23,76 @@ function App() {
           <div className="min-h-screen bg-gray-50 flex flex-col">
             <Header />
             <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/map" element={<MapSearch />} />
-              <Route path="/property/:id" element={<PropertyDetail />} />
-              <Route
-                path="/booking/confirmation"
-                element={
-                  <ProtectedRoute>
-                    <BookingConfirmation />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <ProtectedRoute>
-                    <Profile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/settings"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/setting"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/account"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/preferences"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/add-listing"
-                element={
-                  <ProtectedRoute>
-                    <AddListing />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="/social" element={<SocialHub />} />
-              <Route path="/community" element={<SocialHub />} />
-              <Route path="/connect" element={<SocialHub />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/map" element={<MapSearch />} />
+                <Route path="/property/:id" element={<PropertyDetail />} />
+                <Route
+                  path="/booking/confirmation"
+                  element={
+                    <ProtectedRoute>
+                      <BookingConfirmation />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute>
+                      <Profile />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/settings"
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/setting"
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/account"
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/preferences"
+                  element={
+                    <ProtectedRoute>
+                      <Settings />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/add-listing"
+                  element={
+                    <ProtectedRoute>
+                      <AddListing />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="/social" element={<SocialHub />} />
+                <Route path="/community" element={<SocialHub />} />
+                <Route path="/connect" element={<SocialHub />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </WishlistProvider>
     </AuthProvider>
   );
 }
