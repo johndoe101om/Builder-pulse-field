@@ -170,13 +170,13 @@ export const TravelBuddyFinder: React.FC = () => {
   const getInterestIcon = (interest: string) => {
     const icons = {
       photography: Camera,
-      hiking: Hiking,
+      hiking: Mountain,
       music: Music,
       food: Utensils,
       culture: Globe,
       beaches: Palmtree,
       nightlife: Music,
-      adventure: Hiking,
+      adventure: Mountain,
       "water sports": Palmtree,
       yoga: Users,
       meditation: Users,
