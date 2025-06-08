@@ -21,7 +21,7 @@ import {
   Check,
   CheckCheck,
   Shield,
-  Translate,
+  Languages,
 } from "lucide-react";
 
 interface Message {
