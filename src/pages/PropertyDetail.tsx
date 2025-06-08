@@ -297,6 +297,46 @@ const PropertyDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Enhanced Property Experience Section */}
+        <div className="container mx-auto px-4 py-8">
+          <PropertyExperience
+            propertyId={property.id}
+            images={property.images}
+            videos={[]} // Add video URLs when available
+            location={{
+              lat: 19.076,
+              lng: 72.8777,
+              address: property.location,
+              city: "Mumbai",
+              neighborhood: "Bandra West",
+            }}
+          />
+        </div>
+
+        {/* Advanced Booking Options */}
+        <div className="container mx-auto px-4 py-8 bg-gray-50">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-2">
+              Flexible Booking Options
+            </h2>
+            <p className="text-gray-600">
+              Explore different ways to book and save on your stay
+            </p>
+          </div>
+          <AdvancedBooking propertyId={property.id} />
+        </div>
+
+        {/* Price Intelligence */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-2">Price Intelligence</h2>
+            <p className="text-gray-600">
+              AI-powered insights to help you book at the best time
+            </p>
+          </div>
+          <PricePrediction location={property.location} />
+        </div>
       </main>
 
       <Footer />
