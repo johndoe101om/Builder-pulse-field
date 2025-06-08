@@ -12,6 +12,8 @@ import { Profile } from "./pages/Profile";
 import { Settings } from "./pages/Settings";
 import { AddListing } from "./pages/AddListing";
 import { SocialHub } from "./pages/SocialHub";
+import GuestDashboard from "./pages/GuestDashboard";
+import HostDashboard from "./pages/HostDashboard";
 import { MapSearch } from "./components/search/MapSearch";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
