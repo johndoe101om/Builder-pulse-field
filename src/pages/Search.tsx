@@ -162,8 +162,6 @@ const Search = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header onSearch={handleSearch} />
-
       {/* Search Bar */}
       <div className="border-b bg-white sticky top-16 z-40">
         <div className="container py-4">
