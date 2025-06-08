@@ -64,7 +64,7 @@ import {
   X,
   Maximize,
   Grid3x3,
-  ScanLine,
+  Scan,
   Box,
   RotateCw as Rotate3D,
   Move,
@@ -459,7 +459,7 @@ const PropertyExperience = ({
           {isArSupported ? (
             <div className="space-y-3">
               <Button onClick={startArExperience} size="lg" className="w-full">
-                <ScanLine className="h-5 w-5 mr-2" />
+                <Scan className="h-5 w-5 mr-2" />
                 Start AR Experience
               </Button>
               <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
