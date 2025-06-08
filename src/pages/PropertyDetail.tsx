@@ -344,4 +344,4 @@ const PropertyDetail = () => {
   );
 };
 
-export default PropertyDetail;
+export { PropertyDetail };
