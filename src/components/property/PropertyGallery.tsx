@@ -71,7 +71,7 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
           className="absolute bottom-4 right-4 bg-white hover:bg-gray-50"
           onClick={() => setIsDialogOpen(true)}
         >
-          <GridIcon className="mr-2 h-4 w-4" />
+          <Grid3X3 className="mr-2 h-4 w-4" />
           Show all photos
         </Button>
       </div>
@@ -98,7 +98,7 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/90 text-black"
                   onClick={previousImage}
                 >
-                  <ChevronLeftIcon className="h-4 w-4" />
+                  <ChevronLeft className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="ghost"
@@ -106,7 +106,7 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/90 text-black"
                   onClick={nextImage}
                 >
-                  <ChevronRightIcon className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4" />
                 </Button>
               </>
             )}
