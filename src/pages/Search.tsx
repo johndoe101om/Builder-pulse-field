@@ -301,4 +301,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export { Search };
