@@ -334,8 +334,6 @@ const PropertyDetail = () => {
           <PricePrediction location={property.location} />
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
