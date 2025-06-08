@@ -95,6 +95,14 @@ function App() {
                   }
                 />
                 <Route
+                  path="/trips"
+                  element={
+                    <ProtectedRoute>
+                      <GuestDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
                   path="/host-dashboard"
                   element={
                     <ProtectedRoute>
