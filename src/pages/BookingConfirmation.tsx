@@ -311,3 +311,5 @@ export const BookingConfirmation: React.FC = () => {
     </div>
   );
 };
+
+export { BookingConfirmation };
