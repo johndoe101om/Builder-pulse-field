@@ -8,6 +8,7 @@ import { WishlistProvider } from "./contexts/WishlistContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
+import MapSearch from "./components/search/MapSearch";
 import PropertyDetail from "./pages/PropertyDetail";
 import BookingPayment from "./pages/BookingPayment";
 import GuestDashboard from "./pages/GuestDashboard";
@@ -56,6 +57,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/map" element={<MapSearch />} />
               <Route path="/property/:id" element={<PropertyDetail />} />
               <Route path="/wishlist" element={<Wishlist />} />
 
