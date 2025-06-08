@@ -436,7 +436,7 @@ export const MessagingSystem: React.FC = () => {
                         {message.translation && (
                           <div className="mt-2 pt-2 border-t border-gray-200 border-opacity-20">
                             <div className="flex items-center space-x-1 mb-1">
-                              <Translate className="w-3 h-3 opacity-70" />
+                              <Languages className="w-3 h-3 opacity-70" />
                               <span className="text-xs opacity-70">
                                 Translation
                               </span>
