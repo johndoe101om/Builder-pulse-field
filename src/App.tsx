@@ -1,194 +1,94 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./contexts/AuthContext";
-import { WishlistProvider } from "./contexts/WishlistContext";
-import { ProtectedRoute } from "./components/ProtectedRoute";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import MapSearch from "./components/search/MapSearch";
-import PropertyDetail from "./pages/PropertyDetail";
-import BookingPayment from "./pages/BookingPayment";
-import GuestDashboard from "./pages/GuestDashboard";
-import HostDashboard from "./pages/HostDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
-import AddListing from "./pages/AddListing";
-import Wishlist from "./pages/Wishlist";
-import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import SuperAdminLogin from "./pages/SuperAdminLogin";
-import NotFound from "./pages/NotFound";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { Home } from "./pages/Home";
+import { PropertyDetail } from "./pages/PropertyDetail";
+import { Search } from "./pages/Search";
+import { BookingConfirmation } from "./pages/BookingConfirmation";
+import { Profile } from "./pages/Profile";
+import { Settings } from "./pages/Settings";
+import { AddListing } from "./pages/AddListing";
+import { SocialHub } from "./pages/SocialHub";
+import { MapSearch } from "./components/search/MapSearch";
+import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 
-// Support & Help Pages
-import HelpCenter from "./pages/HelpCenter";
-import SafetyInformation from "./pages/SafetyInformation";
-import CancellationOptions from "./pages/CancellationOptions";
-import DisabilitySupport from "./pages/DisabilitySupport";
-import ContactUs from "./pages/ContactUs";
-
-// Host Resource Pages
-import HostResources from "./pages/HostResources";
-import CommunityForum from "./pages/CommunityForum";
-import ResponsibleHosting from "./pages/ResponsibleHosting";
-import HostGuarantee from "./pages/HostGuarantee";
-
-// Company Pages
-import About from "./pages/About";
-import Careers from "./pages/Careers";
-import Press from "./pages/Press";
-import Investors from "./pages/Investors";
-import TermsOfService from "./pages/TermsOfService";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <WishlistProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/map" element={<MapSearch />} />
-              <Route path="/property/:id" element={<PropertyDetail />} />
-              <Route path="/wishlist" element={<Wishlist />} />
-
-              {/* Protected Routes */}
-              <Route
-                path="/booking/:id"
-                element={
-                  <ProtectedRoute>
-                    <BookingPayment />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/guest-dashboard"
-                element={
-                  <ProtectedRoute>
-                    <GuestDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/host-dashboard"
-                element={
-                  <ProtectedRoute>
-                    <HostDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/admin-dashboard"
-                element={
-                  <ProtectedRoute>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/add-listing"
-                element={
-                  <ProtectedRoute>
-                    <AddListing />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <ProtectedRoute>
-                    <Profile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/settings"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              {/* Route aliases for common settings page variations */}
-              <Route
-                path="/setting"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/account"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/preferences"
-                element={
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                }
-              />
-
-              {/* Authentication Routes */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-
-              {/* Super Admin Route - Separate and Hidden */}
-              <Route path="/sa-login" element={<SuperAdminLogin />} />
-              <Route
-                path="/super-admin-dashboard"
-                element={<AdminDashboard />}
-              />
-
-              {/* Support & Help Routes */}
-              <Route path="/help" element={<HelpCenter />} />
-              <Route path="/safety" element={<SafetyInformation />} />
-              <Route path="/cancellation" element={<CancellationOptions />} />
-              <Route
-                path="/disability-support"
-                element={<DisabilitySupport />}
-              />
-              <Route path="/contact" element={<ContactUs />} />
-
-              {/* Host Resource Routes */}
-              <Route path="/host-resources" element={<HostResources />} />
-              <Route path="/community-forum" element={<CommunityForum />} />
-              <Route
-                path="/responsible-hosting"
-                element={<ResponsibleHosting />}
-              />
-              <Route path="/host-guarantee" element={<HostGuarantee />} />
-
-              {/* Company Routes */}
-              <Route path="/about" element={<About />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/press" element={<Press />} />
-              <Route path="/investors" element={<Investors />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </WishlistProvider>
-    </AuthProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/map" element={<MapSearch />} />
+            <Route path="/property/:id" element={<PropertyDetail />} />
+            <Route
+              path="/booking/confirmation"
+              element={
+                <ProtectedRoute>
+                  <BookingConfirmation />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/setting"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/account"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/preferences"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/add-listing"
+              element={
+                <ProtectedRoute>
+                  <AddListing />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/social" element={<SocialHub />} />
+            <Route path="/community" element={<SocialHub />} />
+            <Route path="/connect" element={<SocialHub />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
 
 export default App;
