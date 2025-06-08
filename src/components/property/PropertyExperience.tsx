@@ -65,9 +65,9 @@ import {
   Maximize,
   Grid3x3,
   ScanLine,
-  Cube,
+  Box,
   RotateCw as Rotate3D,
-  Move3D,
+  Move,
   MousePointer,
   Sparkles,
   Zap,
@@ -447,7 +447,7 @@ const PropertyExperience = ({
       <CardContent className="p-6 h-full flex flex-col items-center justify-center">
         <div className="text-center space-y-4">
           <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto">
-            <Cube className="h-10 w-10 text-white" />
+            <Box className="h-10 w-10 text-white" />
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">AR Room Preview</h3>
@@ -481,7 +481,7 @@ const PropertyExperience = ({
 
           <div className="grid grid-cols-3 gap-4 mt-6">
             <div className="text-center">
-              <Move3D className="h-6 w-6 mx-auto mb-1 text-purple-500" />
+              <Move className="h-6 w-6 mx-auto mb-1 text-purple-500" />
               <div className="text-xs text-gray-600">3D Movement</div>
             </div>
             <div className="text-center">
