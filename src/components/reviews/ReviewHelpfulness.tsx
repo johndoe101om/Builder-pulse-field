@@ -22,6 +22,7 @@ import {
   Users,
   Filter,
   SortAsc,
+  X,
 } from "lucide-react";
 
 interface Review {
