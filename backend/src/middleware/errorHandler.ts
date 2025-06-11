@@ -12,9 +12,9 @@ export interface CustomError extends Error {
 
 export const errorHandler = (
   err: CustomError,
-  req: Request,
+  _req: Request,
   res: Response,
-  next: NextFunction,
+  _next: NextFunction,
 ): Response | void => {
   let error = { ...err };
   error.message = err.message;
