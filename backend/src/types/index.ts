@@ -59,6 +59,17 @@ export interface IProperty extends Document {
   updatedAt: Date;
 }
 
+// Static methods interface for Booking model
+interface BookingStatics {
+  checkAvailability(
+    propertyId: string,
+    checkIn: Date,
+    checkOut: Date,
+    excludeBookingId?: string,
+  ): Promise<boolean>;
+  getAnalytics(hostId?: string, startDate?: Date, endDate?: Date): Promise<any>;
+}
+
 export interface IBooking extends Document {
   _id: Types.ObjectId;
   propertyId: Types.ObjectId;
@@ -74,6 +85,12 @@ export interface IBooking extends Document {
   specialRequests?: string;
   createdAt: Date;
   updatedAt: Date;
+}
+
+// Static methods interface for Review model
+interface ReviewStatics {
+  getAnalytics(propertyId?: string, hostId?: string): Promise<any>;
+  getSentimentAnalysis(propertyId: string): Promise<any>;
 }
 
 export interface IReview extends Document {
