@@ -18,15 +18,20 @@ export const searchController = {
       guests: req.query.guests
         ? parseInt(req.query.guests as string)
         : undefined,
-      priceRange: req.query.priceRange as [number, number],
-      propertyTypes: req.query.propertyTypes as string[],
-      amenities: req.query.amenities as string[],
-      instantBook: req.query.instantBook as boolean,
+      priceRange: req.query.priceRange as [number, number] | undefined,
+      propertyTypes: req.query.propertyTypes as string[] | undefined,
+      amenities: req.query.amenities as string[] | undefined,
+      instantBook: req.query.instantBook as boolean | undefined,
       minRating: req.query.minRating
         ? parseFloat(req.query.minRating as string)
         : undefined,
-      sortBy: req.query.sortBy as "price" | "rating" | "distance" | "newest",
-      sortOrder: req.query.sortOrder as "asc" | "desc",
+      sortBy: req.query.sortBy as
+        | "price"
+        | "rating"
+        | "distance"
+        | "newest"
+        | undefined,
+      sortOrder: req.query.sortOrder as "asc" | "desc" | undefined,
     };
 
     // Build search query
