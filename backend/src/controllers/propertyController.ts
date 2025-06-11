@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Property, User } from "../models/index.js";
 import { ResponseHelper } from "../utils/responseHelper.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
-import { CreatePropertyDTO, PaginationOptions } from "../types/index.js";
+import { CreatePropertyDTO } from "../types/index.js";
 
 export const propertyController = {
   // Get all properties with filters and pagination
