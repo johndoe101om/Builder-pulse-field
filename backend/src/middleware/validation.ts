@@ -9,7 +9,7 @@ export interface ValidationOptions {
 }
 
 export const validate = (schemas: ValidationOptions) => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: Request, res: Response, next: NextFunction): void => {
     const errors: string[] = [];
 
     // Validate request body
@@ -69,7 +69,7 @@ export const validate = (schemas: ValidationOptions) => {
 
 // Middleware for validating MongoDB ObjectId in params
 export const validateObjectId = (paramName = "id") => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: Request, res: Response, next: NextFunction): void => {
     const id = req.params[paramName];
 
     if (!id || !/^[0-9a-fA-F]{24}$/.test(id)) {
@@ -85,7 +85,7 @@ export const validatePagination = (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): void => {
   const page = parseInt(req.query.page as string) || 1;
   const limit = parseInt(req.query.limit as string) || 20;
 
@@ -108,7 +108,7 @@ export const validateDateRange = (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): void => {
   const { checkIn, checkOut } = req.query;
 
   if (checkIn && checkOut) {

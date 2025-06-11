@@ -55,13 +55,13 @@ export const errorHandler = (
 
   // Multer errors
   if (err.name === "MulterError") {
-    if (err.code === "LIMIT_FILE_SIZE") {
+    if ((err as any).code === "LIMIT_FILE_SIZE") {
       return ResponseHelper.badRequest(res, "File too large");
     }
-    if (err.code === "LIMIT_FILE_COUNT") {
+    if ((err as any).code === "LIMIT_FILE_COUNT") {
       return ResponseHelper.badRequest(res, "Too many files");
     }
-    if (err.code === "LIMIT_UNEXPECTED_FILE") {
+    if ((err as any).code === "LIMIT_UNEXPECTED_FILE") {
       return ResponseHelper.badRequest(res, "Unexpected file field");
     }
     return ResponseHelper.badRequest(res, "File upload error");

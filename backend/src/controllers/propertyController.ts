@@ -44,7 +44,11 @@ export const propertyController = {
       searchFilters.amenities = { $all: filters.amenities };
     }
 
-    if (filters.instantBook === "true" || filters.instantBook === true) {
+    if (
+      filters.instantBook === "true" ||
+      filters.instantBook === true ||
+      filters.instantBook === "1"
+    ) {
       searchFilters["availability.instantBook"] = true;
     }
 
