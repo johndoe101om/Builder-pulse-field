@@ -1,14 +1,29 @@
 import mongoose from "mongoose";
+import { MongoMemoryServer } from "mongodb-memory-server";
+
+let mongod: MongoMemoryServer | null = null;
 
 const connectDB = async (): Promise<void> => {
   try {
-    const mongoURI =
-      process.env.MONGODB_URI || "mongodb://localhost:27017/fusion-booking";
+    let mongoURI = process.env.MONGODB_URI;
 
-    if (!mongoURI) {
-      console.log(
-        "⚠️  No MongoDB URI provided, using default local connection",
-      );
+    // If no URI provided or connection fails, use in-memory MongoDB
+    if (!mongoURI || mongoURI.includes("localhost:27017")) {
+      console.log("🎭 Starting in-memory MongoDB server...");
+
+      try {
+        mongod = await MongoMemoryServer.create({
+          instance: {
+            dbName: "fusion-booking",
+          },
+        });
+
+        mongoURI = mongod.getUri();
+        console.log("✅ In-memory MongoDB server started");
+      } catch (memoryError) {
+        console.error("❌ Failed to start in-memory MongoDB:", memoryError);
+        throw memoryError;
+      }
     }
 
     const conn = await mongoose.connect(mongoURI, {
@@ -18,6 +33,7 @@ const connectDB = async (): Promise<void> => {
     });
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+    console.log(`📊 Database: ${conn.connection.name}`);
 
     // Handle connection events
     mongoose.connection.on("error", (err) => {
@@ -31,6 +47,10 @@ const connectDB = async (): Promise<void> => {
     process.on("SIGINT", async () => {
       try {
         await mongoose.connection.close();
+        if (mongod) {
+          await mongod.stop();
+          console.log("In-memory MongoDB server stopped");
+        }
         console.log("MongoDB connection closed through app termination");
       } catch (error) {
         console.error("Error closing MongoDB connection:", error);
@@ -40,13 +60,9 @@ const connectDB = async (): Promise<void> => {
   } catch (error) {
     console.error("❌ Error connecting to MongoDB:", error);
     console.log(
-      "📝 Make sure MongoDB is running or provide a valid MONGODB_URI",
+      "📝 If you have a local MongoDB instance, make sure it's running",
     );
-    console.log("   You can start MongoDB locally with: mongod");
-    console.log("   Or use MongoDB Atlas: https://www.mongodb.com/atlas");
-    console.log(
-      "   Or install MongoDB Community: https://www.mongodb.com/try/download/community",
-    );
+    console.log("   Or provide a valid MONGODB_URI in your .env file");
     process.exit(1);
   }
 };
