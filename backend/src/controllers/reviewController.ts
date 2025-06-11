@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Review, Booking, Property, User } from "../models/index.js";
+import { Review, Booking } from "../models/index.js";
 import { ResponseHelper } from "../utils/responseHelper.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
 import { CreateReviewDTO } from "../types/index.js";
@@ -255,7 +255,7 @@ export const reviewController = {
   getReviewAnalytics: asyncHandler(async (req: Request, res: Response) => {
     const { propertyId, hostId } = req.query;
 
-    const analytics = await Review.getAnalytics(
+    const analytics = await (Review as any).getAnalytics(
       propertyId as string,
       hostId as string,
     );
@@ -271,7 +271,9 @@ export const reviewController = {
   getSentimentAnalysis: asyncHandler(async (req: Request, res: Response) => {
     const { propertyId } = req.params;
 
-    const sentimentData = await Review.getSentimentAnalysis(propertyId);
+    const sentimentData = await (Review as any).getSentimentAnalysis(
+      propertyId,
+    );
 
     return ResponseHelper.success(
       res,
@@ -303,7 +305,7 @@ export const reviewController = {
   // Report review
   reportReview: asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
-    const { reason } = req.body;
+    const { reason: _reason } = req.body;
 
     const review = await Review.findById(id);
 

@@ -317,7 +317,7 @@ export const bookingController = {
     }
     if (hostId) filters.hostId = hostId;
 
-    const analytics = await Booking.getAnalytics(
+    const analytics = await (Booking as any).getAnalytics(
       hostId as string,
       startDate ? new Date(startDate as string) : undefined,
       endDate ? new Date(endDate as string) : undefined,
