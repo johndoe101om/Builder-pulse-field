@@ -1,5 +1,4 @@
 // Mock database service for demonstration when MongoDB is not available
-import { User, Property, Booking, Review } from "../models/index.js";
 
 let isInitialized = false;
 const mockData = {
