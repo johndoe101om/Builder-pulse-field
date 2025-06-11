@@ -24,7 +24,8 @@ app.use(compression());
 // Logging middleware
 app.use(
   morgan(process.env.LOG_FORMAT || "combined", {
-    skip: (req, res) => res.statusCode < 400 && process.env.NODE_ENV === "test",
+    skip: (_req, res) =>
+      res.statusCode < 400 && process.env.NODE_ENV === "test",
   }),
 );
 
@@ -50,7 +51,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use("/api", routes);
 
 // Root endpoint
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.json({
     message: "Fusion Booking Platform API",
     version: process.env.API_VERSION || "v1",
