@@ -3,7 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "cd backend && node simple-server.js",
+    "dev:backend:ts": "cd backend && npm run dev",
     "build": "vite build",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
