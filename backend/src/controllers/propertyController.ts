@@ -44,7 +44,7 @@ export const propertyController = {
       searchFilters.amenities = { $all: filters.amenities };
     }
 
-    if (filters.instantBook === true) {
+    if (filters.instantBook === "true" || filters.instantBook === true) {
       searchFilters["availability.instantBook"] = true;
     }
 
@@ -258,7 +258,7 @@ export const propertyController = {
     }
 
     const Booking = (await import("../models/index.js")).Booking;
-    const isAvailable = await Booking.checkAvailability(
+    const isAvailable = await (Booking as any).checkAvailability(
       id,
       new Date(checkIn as string),
       new Date(checkOut as string),
@@ -286,8 +286,8 @@ export const propertyController = {
     const Booking = (await import("../models/index.js")).Booking;
 
     const [reviewAnalytics, bookingAnalytics] = await Promise.all([
-      Review.getAnalytics(id),
-      Booking.getAnalytics(undefined, undefined, undefined), // Would filter by property in real implementation
+      (Review as any).getAnalytics(id),
+      (Booking as any).getAnalytics(undefined, undefined, undefined), // Would filter by property in real implementation
     ]);
 
     const analytics = {
